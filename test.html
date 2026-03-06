@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preshol Global — Website Design Brief</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0d1117;
+    --paper: #f8f4ee;
+    --gold: #c9963a;
+    --gold-light: #e8c47a;
+    --rust: #b84c2e;
+    --sage: #4a6741;
+    --sky: #2e5f8a;
+    --muted: #7a7060;
+    --rule: #d8cfc0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    min-height: 100vh;
+    background: var(--ink);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 80%, rgba(201,150,58,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 20%, rgba(46,95,138,0.15) 0%, transparent 60%);
+  }
+
+  .cover-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(201,150,58,0.4);
+    padding: 0.35rem 1rem;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 9vw, 7rem);
+    font-weight: 900;
+    color: var(--paper);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    position: relative;
+  }
+
+  .cover h1 span {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .cover-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: rgba(248,244,238,0.55);
+    margin-top: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    position: relative;
+  }
+
+  .cover-meta {
+    margin-top: 4rem;
+    display: flex;
+    gap: 3rem;
+    position: relative;
+  }
+
+  .cover-meta-item {
+    text-align: center;
+  }
+
+  .cover-meta-item .label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .cover-meta-item .value {
+    font-size: 0.9rem;
+    color: var(--paper);
+    font-weight: 500;
+  }
+
+  .cover-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 3rem auto;
+    position: relative;
+  }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* ── CHAPTER HEADER ── */
+  .chapter {
+    padding: 5rem 0 0;
+  }
+
+  .chapter-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .chapter-num::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+    max-width: 60px;
+  }
+
+  .chapter h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+
+  .chapter-intro {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 700px;
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+
+  /* ── SECTION CARDS ── */
+  .section-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2px;
+    margin: 3rem 0;
+    border: 2px solid var(--ink);
+  }
+
+  .section-card {
+    background: white;
+    padding: 2rem;
+    border-right: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    position: relative;
+    transition: background 0.2s;
+  }
+
+  .section-card:hover {
+    background: #fffdf8;
+  }
+
+  .section-card .s-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--rule);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--ink);
+  }
+
+  .section-card p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1rem;
+  }
+
+  .tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+  }
+
+  .tag-img { background: rgba(201,150,58,0.12); color: var(--gold); border: 1px solid rgba(201,150,58,0.3); }
+  .tag-anim { background: rgba(46,95,138,0.1); color: var(--sky); border: 1px solid rgba(46,95,138,0.3); }
+  .tag-form { background: rgba(74,103,65,0.1); color: var(--sage); border: 1px solid rgba(74,103,65,0.3); }
+  .tag-key { background: rgba(184,76,46,0.1); color: var(--rust); border: 1px solid rgba(184,76,46,0.3); }
+
+  /* ── FULL-WIDTH SECTION ROWS ── */
+  .section-rows {
+    margin: 2rem 0 4rem;
+  }
+
+  .section-row {
+    border: 2px solid var(--ink);
+    margin-bottom: -2px;
+    display: grid;
+    grid-template-columns: 60px 1fr 1fr;
+    min-height: 80px;
+  }
+
+  .row-num {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+  }
+
+  .row-title {
+    padding: 1.25rem 1.5rem;
+    border-right: 2px solid var(--ink);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+  }
+
+  .row-detail {
+    padding: 1.25rem 1.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  /* ── IMAGE SPECS ── */
+  .image-spec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0 4rem;
+  }
+
+  .image-spec {
+    border: 2px solid var(--ink);
+    overflow: hidden;
+  }
+
+  .image-spec-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .image-spec-header .loc {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .image-spec-header .type-badge {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    padding: 0.2rem 0.5rem;
+    background: var(--gold);
+    color: var(--ink);
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+
+  .image-spec-body {
+    padding: 1.25rem;
+  }
+
+  .image-spec-body h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .image-spec-body ul {
+    list-style: none;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  .image-spec-body ul li {
+    padding: 0.2rem 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .image-spec-body ul li::before {
+    content: '→';
+    color: var(--gold);
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    margin-top: 0.1rem;
+  }
+
+  .image-spec-body ul li:last-child { border-bottom: none; }
+
+  /* ── GALLERY SPEC ── */
+  .gallery-spec {
+    border: 2px solid var(--ink);
+    margin: 2rem 0 4rem;
+  }
+
+  .gallery-spec-header {
+    background: var(--gold);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .gallery-spec-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--ink);
+  }
+
+  .gallery-spec-header .gallery-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: rgba(13,17,23,0.6);
+    text-align: right;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .gallery-album {
+    border-bottom: 2px solid var(--ink);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+  }
+
+  .gallery-album:last-child { border-bottom: none; }
+
+  .album-label {
+    background: #f0ece4;
+    padding: 1.5rem;
+    border-right: 2px solid var(--ink);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .album-label .album-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .album-label .album-count {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .album-photos {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .photo-entry {
+    display: grid;
+    grid-template-columns: 1.5rem 1fr 140px;
+    gap: 0.75rem;
+    font-size: 0.82rem;
+    align-items: start;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .photo-entry:last-child { border-bottom: none; }
+
+  .photo-entry .photo-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--gold);
+    font-weight: 700;
+    padding-top: 0.1rem;
+  }
+
+  .photo-entry .photo-name { color: var(--ink); font-weight: 500; }
+  .photo-entry .photo-caption { color: var(--muted); font-size: 0.78rem; line-height: 1.4; }
+
+  /* ── FORM SPEC ── */
+  .form-spec {
+    border: 2px solid var(--ink);
+    margin: 2rem 0 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-spec-left {
+    padding: 2.5rem;
+    border-right: 2px solid var(--ink);
+  }
+
+  .form-spec-right {
+    padding: 2.5rem;
+  }
+
+  .form-spec h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .field-list { list-style: none; }
+
+  .field-list li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 80px;
+    align-items: center;
+    font-size: 0.85rem;
+  }
+
+  .field-list li:last-child { border-bottom: none; }
+
+  .field-list .field-name { color: var(--ink); font-weight: 500; }
+
+  .field-list .field-type {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    color: var(--sky);
+    text-align: right;
+  }
+
+  .form-note {
+    background: rgba(201,150,58,0.08);
+    border-left: 3px solid var(--gold);
+    padding: 1rem 1.25rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 1rem;
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER SPEC ── */
+  .footer-spec {
+    border: 2px solid var(--ink);
+    margin: 2rem 0 5rem;
+  }
+
+  .footer-spec-top {
+    background: var(--ink);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-spec-top h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--paper);
+    font-size: 1.3rem;
+  }
+
+  .footer-spec-top .zone-count {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  .footer-zones {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .footer-zone {
+    padding: 1.5rem;
+    border-right: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .footer-zone:last-child { border-right: none; }
+
+  .footer-zone h4 {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-zone ul {
+    list-style: none;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  .footer-zone ul li {
+    padding: 0.2rem 0;
+  }
+
+  .social-icons-spec {
+    padding: 1.5rem 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    border-top: 2px solid var(--rule);
+  }
+
+  .social-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.4rem 0.9rem;
+    border: 1.5px solid var(--rule);
+    border-radius: 2px;
+    color: var(--muted);
+  }
+
+  .social-pill svg { width: 12px; height: 12px; }
+
+  /* ── RESPONSIVE SPEC ── */
+  .responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid var(--ink);
+    margin: 2rem 0 4rem;
+    font-size: 0.85rem;
+  }
+
+  .responsive-table th {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.75rem 1rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: left;
+    border-right: 1px solid rgba(248,244,238,0.1);
+  }
+
+  .responsive-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    border-right: 1px solid var(--rule);
+    color: var(--muted);
+    vertical-align: top;
+  }
+
+  .responsive-table td:first-child {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .responsive-table tr:last-child td { border-bottom: none; }
+
+  /* ── COLOR PALETTE ── */
+  .palette {
+    display: flex;
+    gap: 2px;
+    margin: 2rem 0 4rem;
+    border: 2px solid var(--ink);
+    overflow: hidden;
+  }
+
+  .swatch {
+    flex: 1;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0.75rem;
+    position: relative;
+  }
+
+  .swatch-name {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .swatch-hex {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    margin-top: 0.2rem;
+  }
+
+  /* ── TECH SPEC ── */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 2px;
+    border: 2px solid var(--ink);
+    margin: 2rem 0 4rem;
+  }
+
+  .tech-item {
+    padding: 1.5rem;
+    border-right: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .tech-item h4 {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .tech-item p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ── CALLOUT ── */
+  .callout {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 3rem;
+    margin: 4rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .callout h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .callout h3 em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .callout p {
+    color: rgba(248,244,238,0.6);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .callout-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .callout-stat { border-left: 2px solid var(--gold); padding-left: 1rem; }
+
+  .callout-stat .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+
+  .callout-stat .stat-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(248,244,238,0.5);
+    margin-top: 0.25rem;
+  }
+
+  /* ── PRIORITY BADGE ── */
+  .priority {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.55rem;
+    border-radius: 2px;
+  }
+
+  .priority-high { background: rgba(184,76,46,0.12); color: var(--rust); border: 1px solid rgba(184,76,46,0.3); }
+  .priority-med  { background: rgba(201,150,58,0.12); color: var(--gold); border: 1px solid rgba(201,150,58,0.3); }
+  .priority-low  { background: rgba(74,103,65,0.12); color: var(--sage); border: 1px solid rgba(74,103,65,0.3); }
+
+  /* ── HR ── */
+  hr.rule {
+    border: none;
+    border-top: 2px solid var(--ink);
+    margin: 4rem 0 0;
+  }
+
+  @media (max-width: 768px) {
+    .section-row { grid-template-columns: 40px 1fr; }
+    .row-detail { display: none; }
+    .gallery-album { grid-template-columns: 1fr; }
+    .album-label { border-right: none; border-bottom: 2px solid var(--ink); }
+    .photo-entry { grid-template-columns: 1.5rem 1fr; }
+    .photo-entry .photo-caption { display: none; }
+    .form-spec { grid-template-columns: 1fr; }
+    .form-spec-left { border-right: none; border-bottom: 2px solid var(--ink); }
+    .callout { grid-template-columns: 1fr; gap: 2rem; }
+    .cover-meta { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+    .palette { flex-wrap: wrap; }
+    .swatch { min-width: 80px; }
+    .footer-spec-top { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .gallery-spec-header { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ COVER ═══════════════════ -->
+<div class="cover">
+  <div class="cover-tag">Website Design Brief — Preshol Global</div>
+  <h1>PRESHOL<br><span>Global</span></h1>
+  <p class="cover-sub">Outreach Website · Full Design Specification</p>
+  <div class="cover-divider"></div>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <span class="label">Document Type</span>
+      <span class="value">Design Brief</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="label">Sections</span>
+      <span class="value">10 Sections</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="label">Focus</span>
+      <span class="value">Outreach · Advocacy · Impact</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="label">Responsive</span>
+      <span class="value">Mobile-First</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════ ABOUT ═══════════════════ -->
+<div class="container">
+
+  <div class="chapter">
+    <div class="chapter-num">01 — Organisation Overview</div>
+    <h2>Who is Preshol Global?</h2>
+    <p class="chapter-intro">Understanding the organisation's heartbeat before a single pixel is placed. This context shapes every design decision — tone, imagery, copy hierarchy, and emotional direction.</p>
+  </div>
+
+  <div class="callout">
+    <div>
+      <h3>"We exist to heal hearts, empower minds, and open doors <em>beyond borders</em>."</h3>
+      <p>Preshol Global is a non-profit organisation focused on transformative mission interventions, mental health advocacy, and strategic global opportunity guidance — particularly for young people in underserved communities across Africa and beyond.</p>
+    </div>
+    <div class="callout-stats">
+      <div class="callout-stat">
+        <div class="stat-num">7</div>
+        <div class="stat-label">Countries Reached</div>
+      </div>
+      <div class="callout-stat">
+        <div class="stat-num">15</div>
+        <div class="stat-label">Mission Trips</div>
+      </div>
+      <div class="callout-stat">
+        <div class="stat-num">1,500+</div>
+        <div class="stat-label">Lives Impacted</div>
+      </div>
+      <div class="callout-stat">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Conferences Hosted</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════ SECTION MAP ═══════════════════ -->
+  <hr class="rule">
+  <div class="chapter">
+    <div class="chapter-num">02 — Website Section Map</div>
+    <h2>All 10 Website Sections</h2>
+    <p class="chapter-intro">The website is structured as a single long-scroll outreach page with anchored navigation. Each section serves a distinct emotional and functional purpose.</p>
+  </div>
+
+  <div class="section-rows">
+
+    <div class="section-row">
+      <div class="row-num">S1</div>
+      <div class="row-title">Navigation Bar (Sticky)</div>
+      <div class="row-detail">
+        <span class="tag tag-key">Fixed on scroll</span>
+        <span class="tag tag-anim">Fade-in on load</span>
+        Logo · Nav Links · CTA Button · Mobile Hamburger Menu
+      </div>
+    </div>
+
+    <div class="section-row">
+      <div class="row-num">S2</div>
+      <div class="row-title">Hero Section — Dynamic Full-Screen</div>
+      <div class="row-detail">
+        <span class="tag tag-img">Auto-rotating background images</span>
+        <span class="tag tag-anim">Ken Burns effect + fade transitions</span>
+        <span class="priority priority-high">🔥 Highest Priority</span>
+      </div>
+    </div>
+
+    <div class="section-row">
+      <div class="row-num">S3</div>
+      <div class="row-title">Mission, Vision & Values Strip</div>
+      <div class="row-detail">
+        <span class="tag tag-img">Background texture / world map image</span>
+        Three-column layout with icons. Warm overlay on imagery.
+      </div>
+    </div>
+
+    <div class="section-row">
+      <div class="row-num">S4</div>
+      <div class="row-title">Impact Statistics Counter</div>
+      <div class="row-detail">
+        <span class="tag tag-anim">Count-up animation on scroll</span>
+        <span class="tag tag-img">Full-width image background</span>
+        7 Countries · 15 Trips · 1,500+ Lives · 4 Conferences
+      </div>
+    </div>
+
+    <div class="section-row">
+      <div class="row-num">S5</div>
+      <div class="row-title">Programs & Services</div>
+      <div class="row-detail">
+        <span class="tag tag-img">Card images per program</span>
+        <span class="tag tag-anim">Hover reveal effects</span>
+        4 Program Cards with images, titles, and descriptions
+      </div>
+    </div>
+
+    <div class="section-row">
+      <div class="row-num">S6</div>
+      <div class="row-title">Global Footprint Map Section</div>
+      <div class="row-detail">
+        <span class="tag tag-img">Illustrated/stylised Africa map image</span>
+        Country list with flags, mission summaries. Visual pull-quotes.
+      </div>
+    </div>
+
+    <div class="section-row">
+      <div class="row-num">S7</div>
+      <div class="row-title">Photo Gallery — Full Grid</div>
+      <div class="row-detail">
+        <span class="tag tag-img">Dynamic masonry grid with lightbox</span>
+        <span class="tag tag-anim">Filter tabs by album/country</span>
+        <span class="priority priority-high">🔥 Core Outreach Evidence</span>
+      </div>
+    </div>
+
+    <div class="section-row">
+      <div class="row-num">S8</div>
+      <div class="row-title">Testimonials / Stories of Change</div>
+      <div class="row-detail">
+        <span class="tag tag-img">Portrait photos per testimonial</span>
+        <span class="tag tag-anim">Auto-scrolling carousel</span>
+        Quotes from beneficiaries, community members, partners
+      </div>
+    </div>
+
+    <div class="section-row">
+      <div class="row-num">S9</div>
+      <div class="row-title">Contact / Partnership Form</div>
+      <div class="row-detail">
+        <span class="tag tag-img">Split-screen background image (left)</span>
+        <span class="tag tag-form">Smart contact form (right)</span>
+        Name · Email · Subject · Message · Volunteer/Partner toggle
+      </div>
+    </div>
+
+    <div class="section-row">
+      <div class="row-num">S10</div>
+      <div class="row-title">Footer</div>
+      <div class="row-detail">
+        <span class="tag tag-key">Social icons</span>
+        Logo · Quick Links · Programs · Contact Details · Copyright
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ═══════════════════ IMAGE PLACEMENT ═══════════════════ -->
+  <hr class="rule">
+  <div class="chapter">
+    <div class="chapter-num">03 — Image Placement Specification</div>
+    <h2>Where Every Image Lives</h2>
+    <p class="chapter-intro">This outreach website is image-forward. Imagery builds emotional credibility and communicates real-world impact. Here is the complete image placement map across all sections.</p>
+  </div>
+
+  <div class="image-spec-grid">
+
+    <div class="image-spec">
+      <div class="image-spec-header">
+        <span class="loc">S2 · Hero Section</span>
+        <span class="type-badge">Dynamic / Auto-rotate</span>
+      </div>
+      <div class="image-spec-body">
+        <h4>Rotating Hero Backgrounds</h4>
+        <ul>
+          <li>5–7 high-resolution full-screen images cycling with Ken Burns (pan & zoom) effect</li>
+          <li>Dark gradient overlay (bottom-up) to keep headline text readable</li>
+          <li>Transition: 1.5s crossfade every 5–6 seconds</li>
+          <li>Images: Communities in outreach, group moments, youth programs, field mission</li>
+          <li>Mobile: images center-cropped, portrait orientation preferred</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="image-spec">
+      <div class="image-spec-header">
+        <span class="loc">S3 · Mission/Vision Strip</span>
+        <span class="type-badge">Background Texture</span>
+      </div>
+      <div class="image-spec-body">
+        <h4>World Map or Abstract Texture</h4>
+        <ul>
+          <li>Subtle world map silhouette image as section background</li>
+          <li>Low-opacity overlay (15–20%) — just atmospheric, not distracting</li>
+          <li>Warm amber/gold color wash over image</li>
+          <li>Image should evoke "global" without overwhelming the text</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="image-spec">
+      <div class="image-spec-header">
+        <span class="loc">S4 · Impact Stats</span>
+        <span class="type-badge">Full-Width Background</span>
+      </div>
+      <div class="image-spec-body">
+        <h4>Crowd / Community Background</h4>
+        <ul>
+          <li>Full-width, fixed parallax background image</li>
+          <li>Dark overlay (50–60% opacity) so white stat numbers pop</li>
+          <li>Best image: large group gathering, conference crowd, or community outreach scene</li>
+          <li>Parallax scroll effect on desktop</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="image-spec">
+      <div class="image-spec-header">
+        <span class="loc">S5 · Programs Section</span>
+        <span class="type-badge">Card Images ×4</span>
+      </div>
+      <div class="image-spec-body">
+        <h4>One Image Per Program Card</h4>
+        <ul>
+          <li>Card 1 — Community Mission: image of field outreach/distribution</li>
+          <li>Card 2 — Mental Health: image of a workshop, circle discussion, or counselling</li>
+          <li>Card 3 — Global Pathway: image of student, travel/international setting</li>
+          <li>Card 4 — Youth Leadership: image of young people, presentation, or forum</li>
+          <li>Hover: image scales up (1.05×), overlay appears with short description</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="image-spec">
+      <div class="image-spec-header">
+        <span class="loc">S6 · Global Footprint</span>
+        <span class="type-badge">Map Illustration</span>
+      </div>
+      <div class="image-spec-body">
+        <h4>Africa / World Map Visual</h4>
+        <ul>
+          <li>Illustrated or SVG map with highlighted countries (Nigeria, Ghana, Uganda, etc.)</li>
+          <li>Animated dots or pulse markers on each mission country</li>
+          <li>Optionally: 2–3 small inline "field photos" floating near country labels</li>
+          <li>Right panel: country list with flag emoji + brief mission description</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="image-spec">
+      <div class="image-spec-header">
+        <span class="loc">S8 · Testimonials</span>
+        <span class="type-badge">Portrait Photos</span>
+      </div>
+      <div class="image-spec-body">
+        <h4>Individual Portrait per Story</h4>
+        <ul>
+          <li>Circular or square cropped portrait photo per testimonial</li>
+          <li>If no real portrait available: community/action photo from that mission</li>
+          <li>Carousel: 1 testimonial visible at a time on mobile; 2 on desktop</li>
+          <li>Auto-advance every 5 seconds; manual dots/arrows for control</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="image-spec">
+      <div class="image-spec-header">
+        <span class="loc">S9 · Contact Form</span>
+        <span class="type-badge">Split Layout Image</span>
+      </div>
+      <div class="image-spec-body">
+        <h4>Left-Panel Background Image</h4>
+        <ul>
+          <li>Left 40% of the section: full-height striking outreach photograph</li>
+          <li>Image overlaid with brand colour (warm amber) at ~40% opacity</li>
+          <li>White text (e.g. quote or tagline) layered on top of image</li>
+          <li>On mobile: image collapses above the form as a banner</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="image-spec">
+      <div class="image-spec-header">
+        <span class="loc">S10 · Footer</span>
+        <span class="type-badge">Logo / Background</span>
+      </div>
+      <div class="image-spec-body">
+        <h4>Brand Logo + Optional Footer Visual</h4>
+        <ul>
+          <li>Preshol Global logo (light version) in footer top-left</li>
+          <li>Optional: faint world map or subtle dot-pattern background texture</li>
+          <li>Social icons in row: Facebook, Instagram, X/Twitter, LinkedIn, YouTube</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ═══════════════════ HERO DETAIL ═══════════════════ -->
+  <hr class="rule">
+  <div class="chapter">
+    <div class="chapter-num">04 — Hero Section Deep Dive</div>
+    <h2>Dynamic Hero — Detailed Spec</h2>
+    <p class="chapter-intro">The hero is the most critical section of this site. It must create immediate emotional connection and communicate mission at a glance.</p>
+  </div>
+
+  <div class="section-grid">
+    <div class="section-card">
+      <div class="s-num">H1</div>
+      <h3>Background Image Slider</h3>
+      <p>7 full-screen images auto-rotate. Each image gets a subtle Ken Burns animation (slow zoom/pan). Crossfade transition at 1.2s. Duration per image: 5–6 seconds.</p>
+      <div class="tags">
+        <span class="tag tag-img">7 images</span>
+        <span class="tag tag-anim">Ken Burns</span>
+        <span class="tag tag-anim">Crossfade</span>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="s-num">H2</div>
+      <h3>Headline Text</h3>
+      <p>Large, bold headline: "Healing Hearts. Empowering Minds. Opening Doors." — layered over the image with a gradient shield behind it. Animated letter-by-letter or word-by-word reveal on first load.</p>
+      <div class="tags">
+        <span class="tag tag-anim">Text reveal</span>
+        <span class="tag tag-key">Brand voice</span>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="s-num">H3</div>
+      <h3>Sub-headline + CTA Buttons</h3>
+      <p>One sentence tagline below headline. Two buttons: "Explore Our Work" (primary, filled) and "Partner With Us" (secondary, outlined). Buttons animate in with slight upward float.</p>
+      <div class="tags">
+        <span class="tag tag-anim">Float-in</span>
+        <span class="tag tag-form">CTA</span>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="s-num">H4</div>
+      <h3>Slide Indicators</h3>
+      <p>Bottom-center: small dot or dash indicators showing which slide is active. Clicking a dot jumps to that image. On mobile, dots are larger (touch-friendly).</p>
+      <div class="tags">
+        <span class="tag tag-anim">Interactive</span>
+        <span class="tag tag-key">Accessible</span>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="s-num">H5</div>
+      <h3>Scroll Indicator</h3>
+      <p>Animated downward-pointing chevron or "scroll" text at the very bottom of the hero. Bounces gently. Disappears after first scroll. Signals content below.</p>
+      <div class="tags">
+        <span class="tag tag-anim">Bounce loop</span>
+        <span class="tag tag-key">UX hint</span>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="s-num">H6</div>
+      <h3>Mobile Hero Behaviour</h3>
+      <p>Images are center-cropped and repositioned for portrait. Text size scales down fluidly. CTA buttons stack vertically. Dots remain visible. Minimum height: 90vh on mobile.</p>
+      <div class="tags">
+        <span class="tag tag-key">Mobile-first</span>
+        <span class="tag tag-key">Responsive</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════ GALLERY ═══════════════════ -->
+  <hr class="rule">
+  <div class="chapter">
+    <div class="chapter-num">05 — Photo Gallery Specification</div>
+    <h2>Full Gallery — Albums & Photo Details</h2>
+    <p class="chapter-intro">The gallery is the visual heart of the outreach evidence. It is organised into albums by mission location, with filter tabs and a lightbox pop-up on click.</p>
+  </div>
+
+  <div class="gallery-spec">
+    <div class="gallery-spec-header">
+      <h3>Gallery Section Structure</h3>
+      <div class="gallery-meta">Masonry Grid · Filter Tabs · Lightbox on Click<br>Approx. 30–40 photos total across all albums</div>
+    </div>
+
+    <div class="gallery-album">
+      <div class="album-label">
+        <div class="album-name">🇳🇬 Nigeria Missions</div>
+        <div class="album-count">Suggested: 8–10 photos</div>
+      </div>
+      <div class="album-photos">
+        <div class="photo-entry">
+          <span class="photo-num">01</span>
+          <span class="photo-name">Community Outreach — Northern Zone</span>
+          <span class="photo-caption">Caption: Meeting families in underserved Northern communities</span>
+        </div>
+        <div class="photo-entry">
+          <span class="photo-num">02</span>
+          <span class="photo-name">School Engagement Session</span>
+          <span class="photo-caption">Caption: Mental health talk at a local secondary school</span>
+        </div>
+        <div class="photo-entry">
+          <span class="photo-num">03</span>
+          <span class="photo-name">Resource Distribution</span>
+          <span class="photo-caption">Caption: Distributing educational and welfare materials</span>
+        </div>
+        <div class="photo-entry">
+          <span class="photo-num">04</span>
+          <span class="photo-name">Team Group Photo — Nigeria</span>
+          <span class="photo-caption">Caption: The Preshol Global team after a successful outreach day</span>
+        </div>
+        <div class="photo-entry">
+          <span class="photo-num">05</span>
+          <span class="photo-name">Community Leader Meeting</span>
+          <span class="photo-caption">Caption: Engaging local leaders for sustainable community impact</span>
+        </div>
+        <div class="photo-entry">
+          <span class="photo-num">06</span>
+          <span class="photo-name">Youth Forum Session</span>
+          <span class="photo-caption">Caption: Youth leadership and capacity-building discussion</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-album">
+      <div class="album-label">
+        <div class="album-name">🇬🇭 Ghana — Dabala, Volta</div>
+        <div class="album-count">Suggested: 5–7 photos</div>
+      </div>
+      <div class="album-photos">
+        <div class="photo-entry">
+          <span class="photo-num">01</span>
+          <span class="photo-name">Dabala Community Arrival</span>
+          <span class="photo-caption">Caption: Arriving in the Volta Region for community mission</span>
+        </div>
+        <div class="photo-entry">
+          <span class="photo-num">02</span>
+          <span class="photo-name">Children's Engagement Activity</span>
+          <span class="photo-caption">Caption: Children participating in educational activities</span>
+        </div>
+        <div class="photo-entry">
+          <span class="photo-num">03</span>
+          <span class="photo-name">Faith Community Discussion</span>
+          <span class="photo-caption">Caption: Faith-based mental health conversation with local congregation</span>
+        </div>
+        <div class="photo-entry">
+          <span class="photo-num">04</span>
+          <span class="photo-name">Field Team — Ghana</span>
+          <span class="photo-caption">Caption: Our team in Dabala, Volta Region, Ghana</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-album">
+      <div class="album-label">
+        <div class="album-name">🇨🇮 Côte d'Ivoire — Bondoukou</div>
+        <div class="album-count">Suggested: 4–6 photos</div>
+      </div>
+      <div class="album-photos">
+        <div class="photo-entry">
+          <span class="photo-num">01</span>
+          <span class="photo-name">Bondoukou Community Welcome</span>
+          <span class="photo-caption">Caption: Being received warmly by the Bondoukou community</span>
+        </div>
+        <div class="photo-entry">
+          <span class="photo-num">02</span>
+          <span class="photo-name">Outreach Programme Day 1</span>
+          <span class="photo-caption">Caption: First day of our mission intervention in Côte d'Ivoire</span>
+        </div>
+        <div class="photo-entry">
+          <span class="photo-num">03</span>
+          <span class="photo-name">Group Worship/Fellowship Moment</span>
+          <span class="photo-caption">Caption: Shared moment of faith and community during the mission</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-album">
+      <div class="album-label">
+        <div class="album-name">🇳🇪 Niger — Niamey Deux Mille</div>
+        <div class="album-count">Suggested: 4–5 photos</div>
+      </div>
+      <div class="album-photos">
+        <div class="photo-entry">
+          <span class="photo-num">01</span>
+          <span class="photo-name">Niamey Mission Site</span>
+          <span class="photo-caption">Caption: Outreach location in Niamey Deux Mille community</span>
+        </div>
+        <div class="photo-entry">
+          <span class="photo-num">02</span>
+          <span class="photo-name">Beneficiary Interaction</span>
+          <span class="photo-caption">Caption: Face-to-face engagement with community members</span>
+        </div>
+        <div class="photo-entry">
+          <span class="photo-num">03</span>
+          <span class="photo-name">Team debrief — Niger</span>
+          <span class="photo-caption">Caption: Team reflection session after the Niamey mission</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-album">
+      <div class="album-label">
+        <div class="album-name">🇺🇬 Uganda — Kabale & Rubirizi</div>
+        <div class="album-count">Suggested: 5–7 photos</div>
+      </div>
+      <div class="album-photos">
+        <div class="photo-entry">
+          <span class="photo-num">01</span>
+          <span class="photo-name">Kabale District Outreach</span>
+          <span class="photo-caption">Caption: Community mission in the hills of Kabale, Uganda</span>
+        </div>
+        <div class="photo-entry">
+          <span class="photo-num">02</span>
+          <span class="photo-name">Rubirizi Community Meeting</span>
+          <span class="photo-caption">Caption: Empowering the Rubirizi community with holistic support</span>
+        </div>
+        <div class="photo-entry">
+          <span class="photo-num">03</span>
+          <span class="photo-name">Youth Workshop — Uganda</span>
+          <span class="photo-caption">Caption: Youth leadership session in Uganda</span>
+        </div>
+        <div class="photo-entry">
+          <span class="photo-num">04</span>
+          <span class="photo-name">Nature & Community Landscape</span>
+          <span class="photo-caption">Caption: The beautiful context of the Kabale region, Uganda</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-album">
+      <div class="album-label">
+        <div class="album-name">🎤 Conferences & Events</div>
+        <div class="album-count">Suggested: 5–6 photos</div>
+      </div>
+      <div class="album-photos">
+        <div class="photo-entry">
+          <span class="photo-num">01</span>
+          <span class="photo-name">Conference Hall / Main Stage</span>
+          <span class="photo-caption">Caption: One of 4 strategic conferences hosted by Preshol Global</span>
+        </div>
+        <div class="photo-entry">
+          <span class="photo-num">02</span>
+          <span class="photo-name">Keynote / Speaker Moment</span>
+          <span class="photo-caption">Caption: Thought leadership on mental health and global opportunity</span>
+        </div>
+        <div class="photo-entry">
+          <span class="photo-num">03</span>
+          <span class="photo-name">Audience Engagement</span>
+          <span class="photo-caption">Caption: A captivated audience at a Preshol Global symposium</span>
+        </div>
+        <div class="photo-entry">
+          <span class="photo-num">04</span>
+          <span class="photo-name">Panel Discussion</span>
+          <span class="photo-caption">Caption: Multi-voice panel on mental wellness and youth empowerment</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Gallery Behaviour Notes -->
+  <div style="border: 2px solid var(--ink); padding: 2rem; margin-bottom: 4rem; background: white;">
+    <h4 style="font-family:'Playfair Display',serif; font-size:1.2rem; margin-bottom:1rem;">Gallery — Technical Behaviour Notes</h4>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(250px, 1fr)); gap:1rem;">
+      <div class="form-note"><strong>Filter Tabs:</strong> "All", "Nigeria", "Ghana", "Côte d'Ivoire", "Niger", "Uganda", "Conferences" — tabs animate photos in/out with smooth fade + reflow.</div>
+      <div class="form-note"><strong>Masonry Grid:</strong> Desktop: 3–4 columns. Tablet: 2–3 columns. Mobile: 2 columns. Images vary in height for visual richness.</div>
+      <div class="form-note"><strong>Lightbox:</strong> Click any photo → full-screen overlay with image, caption, country label, and left/right arrows to browse within the current filter.</div>
+      <div class="form-note"><strong>Lazy Loading:</strong> Only load images as user scrolls down. This ensures fast initial page load despite the large gallery.</div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════ FORM ═══════════════════ -->
+  <hr class="rule">
+  <div class="chapter">
+    <div class="chapter-num">06 — Contact & Partnership Form</div>
+    <h2>Form Section Specification</h2>
+    <p class="chapter-intro">The form should feel warm and inviting — not clinical. It serves both general enquiries and partnership/volunteer interest. The visual split layout pairs imagery with the form for emotional context.</p>
+  </div>
+
+  <div class="form-spec">
+    <div class="form-spec-left">
+      <h3>Form Fields</h3>
+      <ul class="field-list">
+        <li><span class="field-name">Full Name</span><span class="field-type">Text input</span></li>
+        <li><span class="field-name">Email Address</span><span class="field-type">Email input</span></li>
+        <li><span class="field-name">Phone Number (optional)</span><span class="field-type">Tel input</span></li>
+        <li><span class="field-name">Country / Location</span><span class="field-type">Text input</span></li>
+        <li><span class="field-name">Purpose of Contact</span><span class="field-type">Dropdown</span></li>
+        <li><span class="field-name">— General Enquiry</span><span class="field-type">Option</span></li>
+        <li><span class="field-name">— Partner With Us</span><span class="field-type">Option</span></li>
+        <li><span class="field-name">— Volunteer Interest</span><span class="field-type">Option</span></li>
+        <li><span class="field-name">— Media / Press</span><span class="field-type">Option</span></li>
+        <li><span class="field-name">— Support / Donate</span><span class="field-type">Option</span></li>
+        <li><span class="field-name">Your Message</span><span class="field-type">Textarea</span></li>
+        <li><span class="field-name">Submit Button — "Send Message"</span><span class="field-type">Button</span></li>
+      </ul>
+      <div class="form-note">On successful submit: show an inline thank-you message — "Thank you! We'll be in touch within 48 hours." — without page reload.</div>
+    </div>
+
+    <div class="form-spec-right">
+      <h3>Visual Layout</h3>
+      <div class="form-note" style="margin-bottom:1rem;"><strong>Left panel (40% width):</strong> A striking mission field photo with warm amber overlay and a short pull-quote: "Your partnership changes lives beyond borders." On mobile, this becomes a banner above the form.</div>
+      <div class="form-note" style="margin-bottom:1rem;"><strong>Right panel (60% width):</strong> Clean white background, generous padding, the form fields. Warm accent colours on labels and the CTA button. Field borders are soft, not harsh.</div>
+      <div class="form-note" style="margin-bottom:1rem;"><strong>Background:</strong> Section background is a very light warm cream (#FAF7F2), contrasting cleanly with the white form panel.</div>
+      <div class="form-note"><strong>Validation:</strong> Inline real-time validation. Red underline + helper text if email is invalid. Required fields marked with asterisk. All labels float above on focus (floating label pattern).</div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <hr class="rule">
+  <div class="chapter">
+    <div class="chapter-num">07 — Footer Specification</div>
+    <h2>Footer — Full Detail</h2>
+    <p class="chapter-intro">The footer is the last impression. It should feel warm, organised, and connected — providing easy navigation, social links, and contact information in one compact space.</p>
+  </div>
+
+  <div class="footer-spec">
+    <div class="footer-spec-top">
+      <h3>Footer Layout</h3>
+      <div class="zone-count">4 Content Zones + Social Row</div>
+    </div>
+
+    <div class="footer-zones">
+      <div class="footer-zone">
+        <h4>Zone 1 — Brand</h4>
+        <ul>
+          <li>Preshol Global logo (light)</li>
+          <li>One-line tagline below</li>
+          <li>"Heal Hearts. Empower Minds. Open Doors."</li>
+          <li>Registration / org number (if available)</li>
+        </ul>
+      </div>
+      <div class="footer-zone">
+        <h4>Zone 2 — Quick Links</h4>
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Programs & Events</li>
+          <li>Global Footprint</li>
+          <li>Photo Gallery</li>
+          <li>Contact Us</li>
+        </ul>
+      </div>
+      <div class="footer-zone">
+        <h4>Zone 3 — Our Programs</h4>
+        <ul>
+          <li>Community Mission Interventions</li>
+          <li>Mental Health Advocacy</li>
+          <li>Global Pathway Guidance</li>
+          <li>Youth Leadership Forums</li>
+        </ul>
+      </div>
+      <div class="footer-zone">
+        <h4>Zone 4 — Contact</h4>
+        <ul>
+          <li>Email address</li>
+          <li>Phone / WhatsApp</li>
+          <li>Office city / country</li>
+          <li>Partnership enquiries link</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="border-top: 2px solid var(--ink); padding: 1.5rem 2rem; background: #f0ece4;">
+      <div style="font-family:'Space Mono',monospace; font-size:0.65rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--muted); margin-bottom:1rem;">Social Media Icons Row — all icons link to active profile pages</div>
+      <div class="social-icons-spec" style="border-top:none; padding:0; gap:0.75rem;">
+        <div class="social-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </div>
+        <div class="social-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          Instagram
+        </div>
+        <div class="social-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X / Twitter
+        </div>
+        <div class="social-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </div>
+        <div class="social-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          YouTube
+        </div>
+        <div class="social-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          WhatsApp
+        </div>
+      </div>
+    </div>
+
+    <div style="border-top: 2px solid var(--rule); padding: 1rem 2rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; font-size:0.78rem; color:var(--muted);">
+      <span style="font-family:'Space Mono',monospace; font-size:0.65rem;">© 2025 Preshol Global. All rights reserved.</span>
+      <span style="font-family:'Space Mono',monospace; font-size:0.65rem;">Privacy Policy · Terms of Use</span>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════ RESPONSIVE ═══════════════════ -->
+  <hr class="rule">
+  <div class="chapter">
+    <div class="chapter-num">08 — Responsive Behaviour</div>
+    <h2>Mobile & Web Responsiveness</h2>
+    <p class="chapter-intro">The website must look and perform perfectly at every screen size. This table defines how each major section adapts.</p>
+  </div>
+
+  <table class="responsive-table">
+    <thead>
+      <tr>
+        <th>Section</th>
+        <th>Desktop (1280px+)</th>
+        <th>Tablet (768–1279px)</th>
+        <th>Mobile (≤767px)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Navigation</td>
+        <td>Horizontal links + CTA button</td>
+        <td>Horizontal links (fewer) + CTA</td>
+        <td>Hamburger menu → slide-down overlay nav</td>
+      </tr>
+      <tr>
+        <td>Hero</td>
+        <td>Full-screen, 100vh, large text</td>
+        <td>Full-screen, 100vh, medium text</td>
+        <td>90vh min, center-cropped images, stacked CTAs</td>
+      </tr>
+      <tr>
+        <td>Mission Strip</td>
+        <td>3 columns side by side</td>
+        <td>3 columns (tighter padding)</td>
+        <td>1 column stacked vertically</td>
+      </tr>
+      <tr>
+        <td>Impact Stats</td>
+        <td>4 stats in one row</td>
+        <td>2×2 grid</td>
+        <td>2×2 grid, smaller font</td>
+      </tr>
+      <tr>
+        <td>Programs</td>
+        <td>4 cards in a row</td>
+        <td>2×2 grid</td>
+        <td>1 column full-width cards</td>
+      </tr>
+      <tr>
+        <td>Global Map</td>
+        <td>Map left, country list right</td>
+        <td>Map above, list below</td>
+        <td>Map above, scrollable list below</td>
+      </tr>
+      <tr>
+        <td>Gallery</td>
+        <td>3–4 column masonry</td>
+        <td>2–3 column masonry</td>
+        <td>2 column grid</td>
+      </tr>
+      <tr>
+        <td>Testimonials</td>
+        <td>2 cards visible, carousel</td>
+        <td>1–2 cards, carousel</td>
+        <td>1 card, swipe-enabled carousel</td>
+      </tr>
+      <tr>
+        <td>Contact Form</td>
+        <td>Split layout (image left, form right)</td>
+        <td>Image reduced or removed</td>
+        <td>Image as top banner, form below</td>
+      </tr>
+      <tr>
+        <td>Footer</td>
+        <td>4 columns in a row</td>
+        <td>2×2 grid</td>
+        <td>1 column stacked, social icons centered</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <!-- ═══════════════════ COLOURS ═══════════════════ -->
+  <hr class="rule">
+  <div class="chapter">
+    <div class="chapter-num">09 — Colour Palette & Typography</div>
+    <h2>Brand Aesthetic Direction</h2>
+    <p class="chapter-intro">The website should feel warm, authoritative, and human. Not corporate-cold, not overly playful. Earthy and global — inspired by African soil, sunlight, and sky.</p>
+  </div>
+
+  <div class="palette">
+    <div class="swatch" style="background:#0d2818; flex:1.2;">
+      <span class="swatch-name" style="color:#a8c4a0;">Deep Forest</span>
+      <span class="swatch-hex" style="color:#a8c4a0;">#0d2818</span>
+    </div>
+    <div class="swatch" style="background:#c9963a;">
+      <span class="swatch-name" style="color:#3d1a00;">Warm Gold</span>
+      <span class="swatch-hex" style="color:#3d1a00;">#c9963a</span>
+    </div>
+    <div class="swatch" style="background:#b84c2e;">
+      <span class="swatch-name" style="color:#ffe8e0;">Terracotta</span>
+      <span class="swatch-hex" style="color:#ffe8e0;">#b84c2e</span>
+    </div>
+    <div class="swatch" style="background:#f8f4ee;">
+      <span class="swatch-name" style="color:#4a3a2a;">Warm Paper</span>
+      <span class="swatch-hex" style="color:#4a3a2a;">#f8f4ee</span>
+    </div>
+    <div class="swatch" style="background:#2e5f8a;">
+      <span class="swatch-name" style="color:#d0e6f5;">Sky Blue</span>
+      <span class="swatch-hex" style="color:#d0e6f5;">#2e5f8a</span>
+    </div>
+    <div class="swatch" style="background:#1a1a1a; flex:1.2;">
+      <span class="swatch-name" style="color:#888;">Ink Black</span>
+      <span class="swatch-hex" style="color:#888;">#1a1a1a</span>
+    </div>
+  </div>
+
+  <div class="tech-grid">
+    <div class="tech-item">
+      <h4>Display / Headings</h4>
+      <p>Playfair Display — serif. Conveys authority, warmth, and humanity. Use for H1, H2, section titles, and pull-quotes.</p>
+    </div>
+    <div class="tech-item">
+      <h4>Body / UI Text</h4>
+      <p>DM Sans — clean, modern, legible at small sizes. Use for paragraphs, labels, navigation, and form fields.</p>
+    </div>
+    <div class="tech-item">
+      <h4>Monospace Accents</h4>
+      <p>Space Mono — for tags, data labels, counters, and captions. Adds technical precision as a design contrast.</p>
+    </div>
+    <div class="tech-item">
+      <h4>Icon Set</h4>
+      <p>Lucide or Heroicons — clean outline icons for program cards, social links, and UI elements. Consistent stroke weight.</p>
+    </div>
+    <div class="tech-item">
+      <h4>Animation Library</h4>
+      <p>GSAP or CSS transitions. ScrollTrigger for count-up stats, section reveals, parallax effects, and gallery filters.</p>
+    </div>
+    <div class="tech-item">
+      <h4>Image Format</h4>
+      <p>WebP preferred for performance. AVIF as future option. Always include alt text for every image for accessibility and SEO.</p>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════ TECH NOTES ═══════════════════ -->
+  <hr class="rule">
+  <div class="chapter">
+    <div class="chapter-num">10 — Technical & SEO Notes</div>
+    <h2>Build Recommendations</h2>
+    <p class="chapter-intro">Key technical requirements to ensure the site is fast, findable, and future-proof.</p>
+  </div>
+
+  <div class="tech-grid" style="margin-bottom:5rem;">
+    <div class="tech-item">
+      <h4>Performance</h4>
+      <p>Lazy-load all gallery images. Compress hero images to max 300KB each. Use image CDN if possible. Target LCP &lt;2.5s.</p>
+    </div>
+    <div class="tech-item">
+      <h4>SEO</h4>
+      <p>Meta title, meta description per page. Open Graph tags for social sharing. Structured data for organisation. Semantic HTML (h1 only once per page).</p>
+    </div>
+    <div class="tech-item">
+      <h4>Accessibility</h4>
+      <p>All images have descriptive alt text. Colour contrast ratio min 4.5:1. Keyboard-navigable. ARIA labels on icons. Skip-to-content link.</p>
+    </div>
+    <div class="tech-item">
+      <h4>Form Handling</h4>
+      <p>Formspree, EmailJS, or backend endpoint. Show success/error state without page reload. Spam protection via honeypot or reCAPTCHA.</p>
+    </div>
+    <div class="tech-item">
+      <h4>Analytics</h4>
+      <p>Google Analytics 4 or Plausible. Track CTA clicks, form submissions, gallery interactions, and scroll depth.</p>
+    </div>
+    <div class="tech-item">
+      <h4>Hosting</h4>
+      <p>Vercel, Netlify, or any static host. Enable HTTPS. Custom domain. Consider next.js or plain HTML/CSS/JS for simplicity and speed.</p>
+    </div>
+  </div>
+
+</div><!-- end container -->
+
+<!-- ═══════════════════ CLOSING ═══════════════════ -->
+<div style="background:var(--ink); padding:4rem 2rem; text-align:center;">
+  <div style="font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:1.5rem;">Design Brief — End of Document</div>
+  <div style="font-family:'Playfair Display',serif; font-size:clamp(1.5rem,4vw,3rem); color:var(--paper); font-weight:700; line-height:1.2; margin-bottom:1rem;">Preshol Global</div>
+  <div style="font-size:0.9rem; color:rgba(248,244,238,0.45); font-weight:300; letter-spacing:0.05em;">Healing Hearts · Empowering Minds · Opening Doors Beyond Borders</div>
+</div>
+
+</body>
+</html>
