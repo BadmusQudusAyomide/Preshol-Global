@@ -1,0 +1,2057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══════ SEO META TAGS ═══════ -->
+  <title>Preshol Global | Healing Hearts. Empowering Minds. Opening Doors Beyond Borders.</title>
+  <meta name="description" content="Preshol Global is a non-profit organisation transforming lives through community mission interventions, mental health advocacy, and global opportunity guidance across 7 countries in Africa and beyond.">
+  <meta name="keywords" content="Preshol Global, non-profit Africa, mental health advocacy Nigeria, community outreach Africa, youth empowerment, mission interventions, global pathway guidance, NGO Africa">
+  <meta name="author" content="Preshol Global">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.presholGlobal.org/">
+
+  <!-- ═══════ OPEN GRAPH ═══════ -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.presholGlobal.org/">
+  <meta property="og:title" content="Preshol Global | Healing Hearts. Empowering Minds. Opening Doors.">
+  <meta property="og:description" content="Transforming lives across 7 countries through non-profit mission interventions, mental health advocacy, and global opportunity guidance.">
+  <meta property="og:image" content="https://www.presholGlobal.org/og-image.jpg">
+  <meta property="og:locale" content="en_NG">
+  <meta property="og:site_name" content="Preshol Global">
+
+  <!-- ═══════ TWITTER CARD ═══════ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Preshol Global | Healing Hearts. Empowering Minds. Opening Doors.">
+  <meta name="twitter:description" content="Non-profit transforming lives across Africa through outreach, mental health & global guidance.">
+  <meta name="twitter:image" content="https://www.presholGlobal.org/og-image.jpg">
+
+  <!-- ═══════ STRUCTURED DATA ═══════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    "name": "Preshol Global",
+    "description": "Non-profit organisation focused on community mission interventions, mental health advocacy, and global opportunity guidance.",
+    "url": "https://www.presholGlobal.org",
+    "logo": "https://www.presholGlobal.org/logo.png",
+    "foundingDate": "2020",
+    "areaServed": ["Nigeria","Ghana","Uganda","Niger","Côte d'Ivoire","Benin","Zimbabwe"],
+    "sameAs": [
+      "https://facebook.com/presholGlobal",
+      "https://instagram.com/presholGlobal",
+      "https://linkedin.com/company/presholGlobal"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "General Enquiry",
+      "availableLanguage": "English"
+    }
+  }
+  </script>
+
+  <!-- ═══════ FONTS ═══════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ═══════════════════════════════════════
+       DESIGN TOKENS
+    ═══════════════════════════════════════ */
+    :root {
+      --forest:   #0b2a1a;
+      --forest2:  #163d26;
+      --gold:     #c8922a;
+      --gold-lt:  #e8b84a;
+      --amber:    #f4a030;
+      --terra:    #b84c2e;
+      --cream:    #faf5ec;
+      --cream2:   #f2ebdc;
+      --ink:      #111810;
+      --muted:    #7a7060;
+      --sky:      #2e5f8a;
+      --rule:     #d8cfc0;
+      --white:    #ffffff;
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Outfit', sans-serif;
+      --font-mono:    'Space Grotesk', sans-serif;
+    }
+
+    /* ═══════════════════════════════════════
+       RESET & BASE
+    ═══════════════════════════════════════ */
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { max-width:100%; display:block; }
+    a { text-decoration:none; color:inherit; }
+    ul { list-style:none; }
+
+    /* ═══════════════════════════════════════
+       SKIP TO CONTENT (a11y)
+    ═══════════════════════════════════════ */
+    .skip-link {
+      position:fixed; top:-100%; left:1rem; z-index:9999;
+      background:var(--gold); color:var(--ink);
+      padding:.5rem 1rem; font-weight:600;
+      transition:top .2s;
+    }
+    .skip-link:focus { top:1rem; }
+
+    /* ═══════════════════════════════════════
+       UTILITY
+    ═══════════════════════════════════════ */
+    .container { max-width:1180px; margin:0 auto; padding:0 2rem; }
+    .section-tag {
+      display:inline-flex; align-items:center; gap:.6rem;
+      font-family:var(--font-mono); font-size:.68rem;
+      letter-spacing:.22em; text-transform:uppercase;
+      color:var(--gold); margin-bottom:1rem;
+    }
+    .section-tag::before {
+      content:''; width:32px; height:1.5px; background:var(--gold);
+    }
+
+    /* ═══════════════════════════════════════
+       NAV
+    ═══════════════════════════════════════ */
+    #navbar {
+      position:fixed; top:0; left:0; right:0; z-index:1000;
+      padding:0 2rem;
+      transition:background .4s, box-shadow .4s, padding .3s;
+    }
+    #navbar.scrolled {
+      background:rgba(11,42,26,.96);
+      backdrop-filter:blur(16px);
+      box-shadow:0 2px 40px rgba(0,0,0,.3);
+      padding:0 2rem;
+    }
+    .nav-inner {
+      max-width:1180px; margin:0 auto;
+      display:flex; align-items:center;
+      justify-content:space-between;
+      height:72px;
+    }
+    .nav-logo {
+      display:flex; align-items:center; gap:.75rem;
+    }
+    .nav-logo-mark {
+      width:38px; height:38px;
+      background:linear-gradient(135deg, var(--gold), var(--amber));
+      border-radius:6px;
+      display:flex; align-items:center; justify-content:center;
+      font-family:var(--font-display); font-size:1.4rem; font-weight:700;
+      color:var(--forest);
+    }
+    .nav-logo-text {
+      font-family:var(--font-display); font-size:1.4rem;
+      font-weight:700; color:var(--white); letter-spacing:.02em;
+    }
+    .nav-logo-text span { color:var(--gold-lt); font-style:italic; }
+
+    .nav-links {
+      display:flex; align-items:center; gap:2.2rem;
+    }
+    .nav-links a {
+      font-size:.85rem; font-weight:500; color:rgba(255,255,255,.75);
+      letter-spacing:.04em; transition:color .25s;
+      position:relative;
+    }
+    .nav-links a::after {
+      content:''; position:absolute; bottom:-4px; left:0; right:0;
+      height:1.5px; background:var(--gold); transform:scaleX(0);
+      transition:transform .3s;
+    }
+    .nav-links a:hover { color:var(--white); }
+    .nav-links a:hover::after { transform:scaleX(1); }
+
+    .nav-cta {
+      background:linear-gradient(135deg, var(--gold), var(--amber));
+      color:var(--forest) !important; font-weight:600 !important;
+      padding:.52rem 1.4rem; border-radius:4px;
+      transition:opacity .25s, transform .2s !important;
+    }
+    .nav-cta::after { display:none !important; }
+    .nav-cta:hover { opacity:.9; transform:translateY(-1px); }
+
+    .hamburger {
+      display:none; flex-direction:column; gap:5px;
+      cursor:pointer; padding:6px; background:none; border:none;
+    }
+    .hamburger span {
+      width:24px; height:2px; background:var(--white);
+      transition:transform .3s, opacity .3s;
+      display:block;
+    }
+    .hamburger.active span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+    .hamburger.active span:nth-child(2) { opacity:0; }
+    .hamburger.active span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+
+    .mobile-menu {
+      display:none; position:fixed; inset:0; z-index:999;
+      background:rgba(11,42,26,.98); backdrop-filter:blur(20px);
+      flex-direction:column; align-items:center; justify-content:center;
+      gap:2.5rem;
+    }
+    .mobile-menu.open { display:flex; }
+    .mobile-menu a {
+      font-family:var(--font-display); font-size:2rem;
+      font-weight:600; color:rgba(255,255,255,.8);
+      transition:color .2s;
+    }
+    .mobile-menu a:hover { color:var(--gold-lt); }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    #hero {
+      position:relative; min-height:100vh;
+      display:flex; align-items:center;
+      overflow:hidden;
+    }
+
+    .hero-slides {
+      position:absolute; inset:0; z-index:0;
+    }
+    .hero-slide {
+      position:absolute; inset:0;
+      background-size:cover; background-position:center;
+      opacity:0; transition:opacity 1.8s ease;
+      animation:kenBurns 8s ease-in-out infinite alternate;
+    }
+    .hero-slide.active { opacity:1; }
+
+    @keyframes kenBurns {
+      from { transform:scale(1); }
+      to   { transform:scale(1.07); }
+    }
+
+    /* Gradient shield */
+    .hero-overlay {
+      position:absolute; inset:0; z-index:1;
+      background:
+        linear-gradient(to top, rgba(11,42,26,.85) 0%, rgba(11,42,26,.45) 45%, rgba(11,42,26,.2) 100%),
+        linear-gradient(to right, rgba(11,42,26,.5) 0%, transparent 60%);
+    }
+
+    .hero-content {
+      position:relative; z-index:2;
+      padding:0 2rem; max-width:1180px; margin:0 auto; width:100%;
+      padding-top:100px;
+    }
+
+    .hero-eyebrow {
+      font-family:var(--font-mono); font-size:.7rem;
+      letter-spacing:.3em; text-transform:uppercase;
+      color:var(--gold-lt); margin-bottom:1.5rem;
+      opacity:0; animation:fadeUp .8s .4s forwards;
+    }
+
+    .hero-headline {
+      font-family:var(--font-display);
+      font-size:clamp(3rem, 7.5vw, 6.5rem);
+      font-weight:600; line-height:1.08;
+      color:var(--white); margin-bottom:1.8rem;
+      opacity:0; animation:fadeUp .9s .65s forwards;
+    }
+    .hero-headline em {
+      color:var(--gold-lt); font-style:italic;
+      display:block;
+    }
+
+    .hero-sub {
+      font-size:clamp(1rem,1.8vw,1.2rem);
+      color:rgba(255,255,255,.72); font-weight:300;
+      max-width:560px; line-height:1.75;
+      margin-bottom:2.8rem;
+      opacity:0; animation:fadeUp .9s .9s forwards;
+    }
+
+    .hero-btns {
+      display:flex; gap:1rem; flex-wrap:wrap;
+      opacity:0; animation:fadeUp .9s 1.1s forwards;
+    }
+    .btn-primary {
+      background:linear-gradient(135deg, var(--gold), var(--amber));
+      color:var(--forest); font-weight:600;
+      padding:.85rem 2.2rem; border-radius:4px;
+      font-size:.95rem; letter-spacing:.04em;
+      transition:transform .25s, box-shadow .25s;
+      cursor:pointer; border:none; display:inline-block;
+    }
+    .btn-primary:hover { transform:translateY(-3px); box-shadow:0 12px 40px rgba(200,146,42,.35); }
+    .btn-outline {
+      border:1.5px solid rgba(255,255,255,.5); color:var(--white);
+      font-weight:500; padding:.85rem 2.2rem; border-radius:4px;
+      font-size:.95rem; letter-spacing:.04em;
+      transition:border-color .25s, background .25s, transform .25s;
+      display:inline-block; cursor:pointer;
+    }
+    .btn-outline:hover { border-color:var(--gold-lt); background:rgba(200,146,42,.1); transform:translateY(-3px); }
+
+    /* Slide dots */
+    .hero-dots {
+      position:absolute; bottom:2.5rem; left:50%;
+      transform:translateX(-50%); z-index:3;
+      display:flex; gap:.6rem;
+    }
+    .hero-dot {
+      width:8px; height:8px; border-radius:50%;
+      background:rgba(255,255,255,.35); cursor:pointer;
+      transition:background .3s, transform .3s;
+      border:none;
+    }
+    .hero-dot.active { background:var(--gold); transform:scale(1.3); }
+
+    /* Scroll cue */
+    .scroll-cue {
+      position:absolute; bottom:2.5rem; right:2.5rem; z-index:3;
+      display:flex; flex-direction:column; align-items:center; gap:.4rem;
+      color:rgba(255,255,255,.45); font-family:var(--font-mono);
+      font-size:.6rem; letter-spacing:.2em; text-transform:uppercase;
+    }
+    .scroll-cue svg { animation:bounce 2s ease-in-out infinite; }
+    @keyframes bounce {
+      0%,100% { transform:translateY(0); }
+      50%     { transform:translateY(6px); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(28px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* ═══════════════════════════════════════
+       MISSION / VISION / VALUES
+    ═══════════════════════════════════════ */
+    #mission {
+      position:relative; overflow:hidden;
+      padding:7rem 0;
+    }
+    .mission-bg {
+      position:absolute; inset:0;
+      background:url('image.jpg') center/cover no-repeat;
+      opacity:.07;
+      filter:grayscale(100%);
+    }
+    .mission-bg-color {
+      position:absolute; inset:0;
+      background:linear-gradient(135deg, var(--forest2) 0%, var(--forest) 100%);
+    }
+    .mission-inner {
+      position:relative; z-index:1;
+    }
+    .mission-header {
+      text-align:center; margin-bottom:4rem;
+    }
+    .mission-header h2 {
+      font-family:var(--font-display);
+      font-size:clamp(2.2rem,4.5vw,4rem);
+      font-weight:600; color:var(--white);
+      line-height:1.15; margin-bottom:1rem;
+    }
+    .mission-header h2 em { color:var(--gold-lt); font-style:italic; }
+    .mission-header p {
+      color:rgba(255,255,255,.6); max-width:560px;
+      margin:0 auto; font-size:1rem; font-weight:300;
+    }
+
+    .mvv-grid {
+      display:grid; grid-template-columns:repeat(3,1fr);
+      gap:2px; border:1px solid rgba(255,255,255,.1);
+    }
+    .mvv-card {
+      background:rgba(255,255,255,.04);
+      padding:3rem 2.5rem;
+      border-right:1px solid rgba(255,255,255,.08);
+      transition:background .3s;
+      position:relative; overflow:hidden;
+    }
+    .mvv-card:last-child { border-right:none; }
+    .mvv-card::before {
+      content:''; position:absolute; bottom:0; left:0;
+      height:3px; width:0; background:linear-gradient(90deg,var(--gold),var(--amber));
+      transition:width .4s;
+    }
+    .mvv-card:hover { background:rgba(255,255,255,.07); }
+    .mvv-card:hover::before { width:100%; }
+
+    .mvv-icon {
+      width:52px; height:52px; margin-bottom:1.5rem;
+      background:rgba(200,146,42,.15); border-radius:8px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.5rem;
+    }
+    .mvv-card h3 {
+      font-family:var(--font-display); font-size:1.6rem;
+      font-weight:600; color:var(--white); margin-bottom:1rem;
+    }
+    .mvv-card p {
+      font-size:.92rem; color:rgba(255,255,255,.6);
+      line-height:1.75; font-weight:300;
+    }
+
+    /* ═══════════════════════════════════════
+       IMPACT STATS
+    ═══════════════════════════════════════ */
+    #impact {
+      position:relative; padding:6rem 0;
+      background:url('image.jpg') center/cover no-repeat fixed;
+      overflow:hidden;
+    }
+    .impact-overlay {
+      position:absolute; inset:0;
+      background:rgba(11,42,26,.82);
+    }
+    .impact-inner {
+      position:relative; z-index:1;
+      text-align:center;
+    }
+    .impact-inner .section-tag { justify-content:center; color:var(--gold-lt); }
+    .impact-inner .section-tag::before { background:var(--gold-lt); }
+    .impact-title {
+      font-family:var(--font-display);
+      font-size:clamp(2rem,4vw,3.5rem);
+      font-weight:600; color:var(--white);
+      margin-bottom:.8rem;
+    }
+    .impact-sub {
+      color:rgba(255,255,255,.55); max-width:520px;
+      margin:0 auto 4rem; font-weight:300;
+    }
+    .stats-row {
+      display:grid; grid-template-columns:repeat(4,1fr);
+      gap:1px; background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.1);
+    }
+    .stat-item {
+      padding:2.5rem 1.5rem;
+      background:rgba(11,42,26,.5);
+      backdrop-filter:blur(10px);
+      position:relative; overflow:hidden;
+    }
+    .stat-item::after {
+      content:''; position:absolute; top:0; left:0;
+      right:0; height:2px;
+      background:linear-gradient(90deg,var(--gold),var(--amber));
+    }
+    .stat-num {
+      font-family:var(--font-display);
+      font-size:clamp(3rem,5vw,5rem);
+      font-weight:700; color:var(--gold-lt);
+      line-height:1;
+      transition:color .3s;
+    }
+    .stat-label {
+      font-family:var(--font-mono); font-size:.7rem;
+      letter-spacing:.18em; text-transform:uppercase;
+      color:rgba(255,255,255,.5); margin-top:.6rem;
+    }
+
+    /* ═══════════════════════════════════════
+       PROGRAMS
+    ═══════════════════════════════════════ */
+    #programs { padding:7rem 0; background:var(--cream); }
+    .programs-header {
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:4rem; align-items:end; margin-bottom:4rem;
+    }
+    .programs-header h2 {
+      font-family:var(--font-display);
+      font-size:clamp(2.2rem,4.5vw,4rem);
+      font-weight:600; line-height:1.12;
+    }
+    .programs-header h2 em { color:var(--gold); font-style:italic; }
+    .programs-header p {
+      color:var(--muted); font-weight:300;
+      line-height:1.8; font-size:1rem;
+      padding-top:1rem;
+      border-top:1.5px solid var(--rule);
+    }
+
+    .programs-grid {
+      display:grid; grid-template-columns:repeat(2,1fr);
+      gap:2px; border:2px solid var(--ink);
+    }
+    .program-card {
+      position:relative; overflow:hidden;
+      background:var(--white);
+      min-height:340px;
+      border-right:2px solid var(--ink);
+      border-bottom:2px solid var(--ink);
+      cursor:pointer;
+      display:flex; flex-direction:column;
+    }
+    .program-card-img {
+      height:220px; overflow:hidden;
+      background:url('image.jpg') center/cover no-repeat;
+      position:relative;
+      flex-shrink:0;
+      transition:transform .5s;
+    }
+    .program-card:hover .program-card-img { transform:scale(1.04); }
+    .program-card-img-overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(to bottom, transparent 40%, rgba(11,42,26,.7));
+    }
+    .program-card-body {
+      padding:1.75rem; flex:1;
+      position:relative;
+    }
+    .program-num {
+      font-family:var(--font-mono); font-size:.65rem;
+      letter-spacing:.2em; color:var(--gold);
+      text-transform:uppercase; margin-bottom:.5rem;
+    }
+    .program-card h3 {
+      font-family:var(--font-display); font-size:1.5rem;
+      font-weight:600; margin-bottom:.6rem; line-height:1.2;
+    }
+    .program-card p {
+      font-size:.88rem; color:var(--muted);
+      line-height:1.7; font-weight:300;
+    }
+    .program-arrow {
+      position:absolute; bottom:1.5rem; right:1.5rem;
+      width:36px; height:36px;
+      border:1.5px solid var(--rule);
+      border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      color:var(--gold);
+      transition:background .25s, border-color .25s;
+    }
+    .program-card:hover .program-arrow {
+      background:var(--gold); border-color:var(--gold); color:var(--forest);
+    }
+
+    /* Program color accents */
+    .program-card:nth-child(1) .program-card-img { filter:brightness(.9); }
+    .program-card:nth-child(2) .program-card-img { filter:brightness(.9) hue-rotate(10deg); }
+    .program-card:nth-child(3) .program-card-img { filter:brightness(.9) hue-rotate(180deg) saturate(.8); }
+    .program-card:nth-child(4) .program-card-img { filter:brightness(.9) hue-rotate(30deg); }
+
+    /* ═══════════════════════════════════════
+       GLOBAL FOOTPRINT
+    ═══════════════════════════════════════ */
+    #footprint { padding:7rem 0; background:var(--cream2); }
+    .footprint-inner {
+      display:grid; grid-template-columns:1.1fr 1fr;
+      gap:4rem; align-items:center;
+    }
+    .footprint-map-side h2 {
+      font-family:var(--font-display);
+      font-size:clamp(2rem,4vw,3.5rem);
+      font-weight:600; line-height:1.12;
+      margin-bottom:1.2rem;
+    }
+    .footprint-map-side h2 em { color:var(--gold); font-style:italic; }
+    .footprint-map-side p {
+      color:var(--muted); font-size:.95rem; line-height:1.8;
+      font-weight:300; margin-bottom:2rem;
+    }
+
+    /* SVG Map wrapper */
+    .map-visual {
+      background:var(--white);
+      border:2px solid var(--ink); padding:2rem;
+      position:relative;
+    }
+    .map-placeholder {
+      background:url('image.jpg') center/cover no-repeat;
+      min-height:320px; position:relative;
+    }
+    .map-placeholder-overlay {
+      position:absolute; inset:0;
+      background:rgba(11,42,26,.75);
+      display:flex; align-items:center; justify-content:center;
+      flex-direction:column; gap:.5rem;
+    }
+    .map-globe { font-size:4rem; }
+    .map-label {
+      font-family:var(--font-mono); font-size:.65rem;
+      letter-spacing:.2em; color:var(--gold-lt);
+      text-transform:uppercase;
+    }
+
+    .country-list {
+      display:flex; flex-direction:column; gap:0;
+      border:2px solid var(--ink);
+    }
+    .country-item {
+      padding:1.1rem 1.5rem;
+      border-bottom:1.5px solid var(--rule);
+      display:grid; grid-template-columns:2.5rem 1fr auto;
+      gap:1rem; align-items:center;
+      transition:background .2s;
+      cursor:default;
+    }
+    .country-item:last-child { border-bottom:none; }
+    .country-item:hover { background:rgba(200,146,42,.07); }
+    .country-flag { font-size:1.5rem; }
+    .country-info h4 {
+      font-weight:600; font-size:.9rem; margin-bottom:.15rem;
+    }
+    .country-info p {
+      font-size:.78rem; color:var(--muted); font-weight:300;
+    }
+    .country-trips {
+      font-family:var(--font-mono); font-size:.65rem;
+      letter-spacing:.1em; color:var(--gold);
+      text-transform:uppercase;
+      background:rgba(200,146,42,.1); padding:.25rem .6rem;
+      border-radius:3px;
+    }
+
+    /* ═══════════════════════════════════════
+       GALLERY
+    ═══════════════════════════════════════ */
+    #gallery { padding:7rem 0; background:var(--ink); }
+    .gallery-header { margin-bottom:3rem; }
+    .gallery-header .section-tag { color:var(--gold-lt); }
+    .gallery-header .section-tag::before { background:var(--gold-lt); }
+    .gallery-header h2 {
+      font-family:var(--font-display);
+      font-size:clamp(2.2rem,4.5vw,4rem);
+      font-weight:600; color:var(--white); line-height:1.1;
+    }
+    .gallery-header h2 em { color:var(--gold-lt); font-style:italic; }
+
+    .gallery-filters {
+      display:flex; flex-wrap:wrap; gap:.6rem;
+      margin-bottom:2.5rem;
+    }
+    .filter-btn {
+      font-family:var(--font-mono); font-size:.65rem;
+      letter-spacing:.15em; text-transform:uppercase;
+      padding:.4rem 1rem; border:1.5px solid rgba(255,255,255,.2);
+      color:rgba(255,255,255,.5); background:none; cursor:pointer;
+      border-radius:3px; transition:all .25s;
+    }
+    .filter-btn.active,
+    .filter-btn:hover {
+      border-color:var(--gold); color:var(--gold);
+      background:rgba(200,146,42,.1);
+    }
+
+    /* Masonry-style grid */
+    .gallery-grid {
+      columns:4; column-gap:3px; row-gap:3px;
+    }
+    .gallery-item {
+      break-inside:avoid; margin-bottom:3px;
+      overflow:hidden; cursor:pointer;
+      position:relative; display:block;
+    }
+    .gallery-item img {
+      width:100%; display:block;
+      transition:transform .5s, filter .4s;
+    }
+    .gallery-item:hover img { transform:scale(1.04); filter:brightness(1.1); }
+    .gallery-item-overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(to top, rgba(11,42,26,.85) 0%, transparent 50%);
+      opacity:0; transition:opacity .35s;
+      display:flex; flex-direction:column;
+      justify-content:flex-end; padding:1rem;
+    }
+    .gallery-item:hover .gallery-item-overlay { opacity:1; }
+    .gallery-item-caption {
+      font-size:.78rem; color:rgba(255,255,255,.85);
+      font-weight:400; line-height:1.4;
+    }
+    .gallery-item-tag {
+      font-family:var(--font-mono); font-size:.58rem;
+      letter-spacing:.15em; color:var(--gold-lt);
+      text-transform:uppercase; margin-bottom:.3rem;
+    }
+
+    /* tall/wide variants for masonry visual richness */
+    .gallery-item.tall img { height:320px; object-fit:cover; }
+    .gallery-item.short img { height:180px; object-fit:cover; }
+    .gallery-item.med img  { height:240px; object-fit:cover; }
+
+    /* Lightbox */
+    .lightbox {
+      position:fixed; inset:0; z-index:9000;
+      background:rgba(0,0,0,.95);
+      display:none; align-items:center; justify-content:center;
+      padding:2rem;
+    }
+    .lightbox.open { display:flex; }
+    .lightbox-img {
+      max-width:90vw; max-height:85vh;
+      object-fit:contain; border:2px solid rgba(255,255,255,.1);
+    }
+    .lightbox-close {
+      position:absolute; top:1.5rem; right:1.5rem;
+      background:none; border:none; color:var(--white);
+      font-size:2rem; cursor:pointer; line-height:1;
+      transition:color .2s;
+    }
+    .lightbox-close:hover { color:var(--gold); }
+    .lightbox-caption {
+      position:absolute; bottom:2rem; left:50%; transform:translateX(-50%);
+      text-align:center; color:rgba(255,255,255,.6);
+      font-size:.85rem; max-width:600px;
+    }
+    .lightbox-nav {
+      position:absolute; top:50%; transform:translateY(-50%);
+      background:rgba(255,255,255,.08); border:none; color:var(--white);
+      font-size:1.5rem; cursor:pointer; padding:.75rem 1rem;
+      transition:background .2s;
+    }
+    .lightbox-nav:hover { background:rgba(200,146,42,.25); }
+    .lightbox-prev { left:1rem; }
+    .lightbox-next { right:1rem; }
+
+    /* ═══════════════════════════════════════
+       TESTIMONIALS
+    ═══════════════════════════════════════ */
+    #testimonials { padding:7rem 0; background:var(--cream); }
+    .testimonials-header { text-align:center; margin-bottom:4rem; }
+    .testimonials-header .section-tag { justify-content:center; }
+    .testimonials-header h2 {
+      font-family:var(--font-display);
+      font-size:clamp(2.2rem,4.5vw,4rem);
+      font-weight:600; line-height:1.12;
+    }
+    .testimonials-header h2 em { color:var(--gold); font-style:italic; }
+
+    .testi-carousel {
+      position:relative; overflow:hidden;
+    }
+    .testi-track {
+      display:flex; transition:transform .6s cubic-bezier(.4,0,.2,1);
+    }
+    .testi-slide {
+      min-width:calc(50% - 1rem);
+      margin-right:2rem;
+      background:var(--white);
+      border:1.5px solid var(--rule);
+      padding:2.5rem;
+      position:relative;
+    }
+    .testi-slide::before {
+      content:'"';
+      font-family:var(--font-display); font-size:6rem;
+      color:var(--gold); opacity:.2;
+      position:absolute; top:-.5rem; left:1.5rem;
+      line-height:1;
+    }
+    .testi-text {
+      font-family:var(--font-display); font-size:1.2rem;
+      font-style:italic; color:var(--ink);
+      line-height:1.65; margin-bottom:1.5rem;
+      position:relative; z-index:1;
+      font-weight:400;
+    }
+    .testi-person {
+      display:flex; align-items:center; gap:1rem;
+    }
+    .testi-avatar {
+      width:48px; height:48px; border-radius:50%;
+      background:url('image.jpg') center/cover no-repeat;
+      flex-shrink:0;
+    }
+    .testi-person h4 { font-weight:600; font-size:.9rem; }
+    .testi-person p { font-size:.78rem; color:var(--muted); }
+    .testi-country {
+      font-family:var(--font-mono); font-size:.6rem;
+      letter-spacing:.15em; color:var(--gold);
+      text-transform:uppercase;
+    }
+
+    .testi-controls {
+      display:flex; justify-content:center;
+      align-items:center; gap:1rem; margin-top:2.5rem;
+    }
+    .testi-btn {
+      width:40px; height:40px; border-radius:50%;
+      border:1.5px solid var(--rule); background:none;
+      cursor:pointer; display:flex; align-items:center; justify-content:center;
+      transition:all .25s; color:var(--ink);
+    }
+    .testi-btn:hover {
+      border-color:var(--gold); color:var(--gold);
+      background:rgba(200,146,42,.08);
+    }
+    .testi-dots { display:flex; gap:.5rem; }
+    .testi-dot {
+      width:8px; height:8px; border-radius:50%;
+      background:var(--rule); cursor:pointer;
+      transition:background .25s; border:none;
+    }
+    .testi-dot.active { background:var(--gold); }
+
+    /* ═══════════════════════════════════════
+       WHAT WE DO
+    ═══════════════════════════════════════ */
+    #whatwedo { padding:7rem 0; background:var(--cream2); }
+    .whatwedo-inner {
+      display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;
+    }
+    .whatwedo-text h2 {
+      font-family:var(--font-display);
+      font-size:clamp(2rem,4vw,3.5rem);
+      font-weight:600; line-height:1.12; margin-bottom:1.5rem;
+    }
+    .whatwedo-text h2 em { color:var(--gold); font-style:italic; }
+    .whatwedo-text p {
+      color:var(--muted); font-weight:300; line-height:1.8;
+      margin-bottom:2rem; font-size:.95rem;
+    }
+    .what-list { display:flex; flex-direction:column; gap:1.2rem; }
+    .what-item {
+      display:grid; grid-template-columns:3rem 1fr;
+      gap:1rem; align-items:start;
+      padding:1.25rem; background:var(--white);
+      border-left:3px solid var(--gold);
+      transition:transform .2s, box-shadow .2s;
+    }
+    .what-item:hover { transform:translateX(4px); box-shadow:4px 0 24px rgba(200,146,42,.1); }
+    .what-icon { font-size:1.4rem; padding-top:.1rem; }
+    .what-item h4 { font-weight:600; font-size:.95rem; margin-bottom:.3rem; }
+    .what-item p { font-size:.85rem; color:var(--muted); font-weight:300; line-height:1.6; }
+
+    .whatwedo-visual {
+      position:relative;
+    }
+    .whatwedo-img {
+      width:100%; height:480px;
+      background:url('image.jpg') center/cover no-repeat;
+      position:relative;
+    }
+    .whatwedo-img::before {
+      content:''; position:absolute; inset:0;
+      background:linear-gradient(135deg, rgba(200,146,42,.25), transparent 60%);
+    }
+    .whatwedo-badge {
+      position:absolute; bottom:-1.5rem; left:-1.5rem;
+      background:var(--forest); color:var(--white);
+      padding:1.5rem 2rem;
+      border:3px solid var(--gold);
+    }
+    .whatwedo-badge .num {
+      font-family:var(--font-display); font-size:3rem;
+      font-weight:700; color:var(--gold-lt); line-height:1;
+    }
+    .whatwedo-badge .lbl {
+      font-family:var(--font-mono); font-size:.6rem;
+      letter-spacing:.18em; text-transform:uppercase;
+      color:rgba(255,255,255,.55);
+    }
+
+    /* ═══════════════════════════════════════
+       CONTACT FORM
+    ═══════════════════════════════════════ */
+    #contact { padding:0; overflow:hidden; }
+    .contact-wrap {
+      display:grid; grid-template-columns:.9fr 1.1fr;
+      min-height:680px;
+    }
+    .contact-image {
+      background:url('image.jpg') center/cover no-repeat;
+      position:relative;
+    }
+    .contact-image-overlay {
+      position:absolute; inset:0;
+      background:rgba(11,42,26,.72);
+      display:flex; flex-direction:column;
+      justify-content:center; padding:4rem 3rem;
+    }
+    .contact-quote {
+      font-family:var(--font-display); font-size:2.2rem;
+      font-style:italic; color:var(--white);
+      line-height:1.3; margin-bottom:1.5rem;
+    }
+    .contact-quote span { color:var(--gold-lt); }
+    .contact-detail {
+      font-size:.85rem; color:rgba(255,255,255,.55);
+      line-height:1.8; margin-top:2rem;
+    }
+    .contact-detail strong { color:rgba(255,255,255,.8); display:block; font-size:.78rem; font-family:var(--font-mono); letter-spacing:.12em; text-transform:uppercase; margin-bottom:.25rem; margin-top:1rem; }
+
+    .contact-form-panel {
+      background:var(--white); padding:4rem 3rem;
+    }
+    .contact-form-panel h2 {
+      font-family:var(--font-display); font-size:2.5rem;
+      font-weight:600; margin-bottom:.5rem;
+    }
+    .contact-form-panel p {
+      color:var(--muted); font-size:.9rem; margin-bottom:2.5rem;
+      font-weight:300;
+    }
+
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
+    .field {
+      position:relative; margin-bottom:1.2rem;
+    }
+    .field label {
+      display:block; font-size:.75rem; font-weight:500;
+      letter-spacing:.08em; text-transform:uppercase;
+      color:var(--muted); margin-bottom:.4rem;
+      font-family:var(--font-mono);
+    }
+    .field input,
+    .field select,
+    .field textarea {
+      width:100%; padding:.8rem 1rem;
+      border:1.5px solid var(--rule);
+      background:var(--cream); color:var(--ink);
+      font-family:var(--font-body); font-size:.9rem;
+      border-radius:3px; outline:none;
+      transition:border-color .25s, background .25s;
+      appearance:none;
+    }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color:var(--gold); background:var(--white);
+    }
+    .field textarea { min-height:120px; resize:vertical; }
+    .field select {
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%237a7060'/%3E%3C/svg%3E");
+      background-repeat:no-repeat; background-position:right 1rem center;
+      padding-right:2.5rem;
+    }
+
+    .form-submit {
+      background:linear-gradient(135deg,var(--forest),var(--forest2));
+      color:var(--white); font-weight:600; padding:.9rem 2.5rem;
+      border:none; cursor:pointer; font-size:.95rem;
+      letter-spacing:.04em; transition:opacity .25s, transform .2s;
+      width:100%; font-family:var(--font-body);
+    }
+    .form-submit:hover { opacity:.9; transform:translateY(-2px); }
+
+    .form-success {
+      display:none; text-align:center; padding:2rem;
+      background:rgba(74,103,65,.08); border:1.5px solid rgba(74,103,65,.3);
+      border-radius:4px; margin-top:1rem;
+    }
+    .form-success.show { display:block; }
+    .form-success p { color:var(--forest); font-weight:500; }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    footer {
+      background:var(--forest); padding:5rem 0 0;
+    }
+    .footer-top {
+      display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr;
+      gap:3rem; padding-bottom:3rem;
+      border-bottom:1px solid rgba(255,255,255,.1);
+    }
+    .footer-brand h3 {
+      font-family:var(--font-display); font-size:1.8rem;
+      font-weight:700; color:var(--white); margin-bottom:.5rem;
+    }
+    .footer-brand h3 span { color:var(--gold-lt); font-style:italic; }
+    .footer-brand p {
+      font-size:.85rem; color:rgba(255,255,255,.45);
+      line-height:1.75; margin-bottom:1.5rem; font-weight:300;
+    }
+
+    .footer-col h4 {
+      font-family:var(--font-mono); font-size:.65rem;
+      letter-spacing:.2em; text-transform:uppercase;
+      color:var(--gold-lt); margin-bottom:1.25rem;
+    }
+    .footer-col ul li {
+      margin-bottom:.6rem;
+    }
+    .footer-col ul li a {
+      font-size:.85rem; color:rgba(255,255,255,.45);
+      transition:color .2s; font-weight:300;
+    }
+    .footer-col ul li a:hover { color:var(--gold-lt); }
+
+    .social-row {
+      display:flex; gap:.75rem; flex-wrap:wrap;
+      padding:2rem 0; align-items:center;
+    }
+    .social-icon {
+      width:38px; height:38px; border-radius:50%;
+      border:1.5px solid rgba(255,255,255,.15);
+      display:flex; align-items:center; justify-content:center;
+      color:rgba(255,255,255,.4); transition:all .25s;
+      font-size:.7rem;
+    }
+    .social-icon:hover {
+      border-color:var(--gold); color:var(--gold);
+      background:rgba(200,146,42,.1);
+    }
+    .social-icon svg { width:15px; height:15px; fill:currentColor; }
+
+    .footer-bottom {
+      padding:1.5rem 0;
+      border-top:1px solid rgba(255,255,255,.08);
+      display:flex; justify-content:space-between; align-items:center;
+      flex-wrap:wrap; gap:.5rem;
+    }
+    .footer-bottom p {
+      font-family:var(--font-mono); font-size:.62rem;
+      letter-spacing:.1em; color:rgba(255,255,255,.3);
+      text-transform:uppercase;
+    }
+    .footer-bottom a { color:rgba(255,255,255,.3); transition:color .2s; }
+    .footer-bottom a:hover { color:var(--gold-lt); }
+
+    /* ═══════════════════════════════════════
+       SCROLL REVEAL
+    ═══════════════════════════════════════ */
+    .reveal {
+      opacity:0; transform:translateY(36px);
+      transition:opacity .7s, transform .7s;
+    }
+    .reveal.visible { opacity:1; transform:none; }
+    .reveal-left {
+      opacity:0; transform:translateX(-36px);
+      transition:opacity .7s, transform .7s;
+    }
+    .reveal-left.visible { opacity:1; transform:none; }
+    .reveal-right {
+      opacity:0; transform:translateX(36px);
+      transition:opacity .7s, transform .7s;
+    }
+    .reveal-right.visible { opacity:1; transform:none; }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media (max-width:1024px) {
+      .programs-header,
+      .footprint-inner { grid-template-columns:1fr; gap:3rem; }
+      .programs-grid { grid-template-columns:1fr 1fr; }
+      .stats-row { grid-template-columns:repeat(2,1fr); }
+      .footer-top { grid-template-columns:1fr 1fr; gap:2rem; }
+      .gallery-grid { columns:3; }
+      .testi-slide { min-width:calc(100% - 1rem); }
+      .whatwedo-inner { grid-template-columns:1fr; }
+      .whatwedo-visual { order:-1; }
+    }
+    @media (max-width:768px) {
+      .nav-links { display:none; }
+      .hamburger { display:flex; }
+      .programs-grid { grid-template-columns:1fr; }
+      .mvv-grid { grid-template-columns:1fr; }
+      .contact-wrap { grid-template-columns:1fr; }
+      .contact-image { min-height:280px; }
+      .gallery-grid { columns:2; }
+      .footer-top { grid-template-columns:1fr; }
+      .form-row { grid-template-columns:1fr; }
+      .stats-row { grid-template-columns:repeat(2,1fr); }
+      .hero-btns { flex-direction:column; align-items:flex-start; }
+    }
+    @media (max-width:480px) {
+      .gallery-grid { columns:2; }
+      .stats-row { grid-template-columns:1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── SKIP LINK (a11y) ── -->
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- ════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════ -->
+<nav id="navbar" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="Preshol Global Home">
+      <div class="nav-logo-mark" aria-hidden="true">P</div>
+      <span class="nav-logo-text">Preshol <span>Global</span></span>
+    </a>
+
+    <div class="nav-links" role="menubar">
+      <a href="#mission" role="menuitem">About</a>
+      <a href="#programs" role="menuitem">Programs</a>
+      <a href="#footprint" role="menuitem">Footprint</a>
+      <a href="#gallery" role="menuitem">Gallery</a>
+      <a href="#testimonials" role="menuitem">Stories</a>
+      <a href="#contact" class="nav-cta" role="menuitem">Partner With Us</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Open mobile menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="#mission" onclick="closeMobile()">About</a>
+  <a href="#programs" onclick="closeMobile()">Programs</a>
+  <a href="#footprint" onclick="closeMobile()">Footprint</a>
+  <a href="#gallery" onclick="closeMobile()">Gallery</a>
+  <a href="#testimonials" onclick="closeMobile()">Stories</a>
+  <a href="#contact" onclick="closeMobile()" style="color:var(--gold-lt)">Partner With Us</a>
+</nav>
+
+<!-- ════════════════════════════════════
+     HERO
+════════════════════════════════════ -->
+<main id="main">
+<section id="hero" aria-label="Hero — Preshol Global">
+
+  <!-- Background slides — using image.jpg tinted via CSS classes -->
+  <div class="hero-slides" aria-hidden="true">
+    <div class="hero-slide active" style="background-image:url('image.jpg'); background-position:center top;"></div>
+    <div class="hero-slide" style="background-image:url('image.jpg'); background-position:center 30%;"></div>
+    <div class="hero-slide" style="background-image:url('image.jpg'); background-position:center 60%;"></div>
+    <div class="hero-slide" style="background-image:url('image.jpg'); background-position:center 80%;"></div>
+    <div class="hero-slide" style="background-image:url('image.jpg'); background-position:40% center;"></div>
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Non-Profit · Africa &amp; Beyond · Est. 2020</p>
+    <h1 class="hero-headline">
+      Healing Hearts.<br>
+      Empowering Minds.<br>
+      <em>Opening Doors.</em>
+    </h1>
+    <p class="hero-sub">
+      We exist to restore hope, strengthen mental wellbeing, and create pathways
+      for individuals — especially young people — to thrive locally and globally.
+    </p>
+    <div class="hero-btns">
+      <a href="#programs" class="btn-primary">Explore Our Work</a>
+      <a href="#contact" class="btn-outline">Partner With Us</a>
+    </div>
+  </div>
+
+  <!-- Slide indicators -->
+  <div class="hero-dots" aria-label="Image navigation">
+    <button class="hero-dot active" aria-label="Slide 1"></button>
+    <button class="hero-dot" aria-label="Slide 2"></button>
+    <button class="hero-dot" aria-label="Slide 3"></button>
+    <button class="hero-dot" aria-label="Slide 4"></button>
+    <button class="hero-dot" aria-label="Slide 5"></button>
+  </div>
+
+  <!-- Scroll cue -->
+  <div class="scroll-cue" aria-hidden="true">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M7 10l5 5 5-5"/>
+    </svg>
+    Scroll
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     MISSION / VISION / VALUES
+════════════════════════════════════ -->
+<section id="mission" aria-labelledby="mission-heading">
+  <div class="mission-bg" aria-hidden="true"></div>
+  <div class="mission-bg-color" aria-hidden="true"></div>
+  <div class="mission-inner container">
+
+    <div class="mission-header reveal">
+      <span class="section-tag" style="color:var(--gold-lt); justify-content:center;">
+        Our Foundation
+      </span>
+      <h2 id="mission-heading">
+        We exist to heal, empower,<br>and <em>open doors beyond borders.</em>
+      </h2>
+      <p>Every program, every mission, every conversation is rooted in three unshakeable commitments.</p>
+    </div>
+
+    <div class="mvv-grid reveal">
+      <article class="mvv-card">
+        <div class="mvv-icon" aria-hidden="true">🎯</div>
+        <h3>Our Mission</h3>
+        <p>To restore hope, strengthen mental wellbeing, and create pathways for individuals — especially young people — to thrive locally and globally. Sustainable impact, not temporary relief.</p>
+      </article>
+      <article class="mvv-card">
+        <div class="mvv-icon" aria-hidden="true">🌍</div>
+        <h3>Our Vision</h3>
+        <p>A world where mental wellness is prioritised, vulnerable communities are supported through sustainable mission interventions, and individuals are equipped to access life-changing global opportunities.</p>
+      </article>
+      <article class="mvv-card">
+        <div class="mvv-icon" aria-hidden="true">💛</div>
+        <h3>Our Values</h3>
+        <p>Compassion. Excellence. Courage. We envision a generation of mentally resilient, purpose-aligned leaders transforming communities and shaping nations.</p>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     IMPACT STATS
+════════════════════════════════════ -->
+<section id="impact" aria-labelledby="impact-heading">
+  <div class="impact-overlay" aria-hidden="true"></div>
+  <div class="impact-inner container">
+    <span class="section-tag">Our Impact</span>
+    <h2 class="impact-title reveal" id="impact-heading">Numbers That Tell a Story</h2>
+    <p class="impact-sub reveal">
+      From West Africa to East and Southern Africa — each outreach represents
+      restored hope, strengthened minds, and empowered communities.
+    </p>
+    <div class="stats-row reveal">
+      <div class="stat-item">
+        <div class="stat-num" data-target="7">0</div>
+        <div class="stat-label">Countries Reached</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="15">0</div>
+        <div class="stat-label">Mission Trips</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="1500" data-suffix="+">0</div>
+        <div class="stat-label">Lives Impacted</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="4">0</div>
+        <div class="stat-label">Conferences Hosted</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     PROGRAMS
+════════════════════════════════════ -->
+<section id="programs" aria-labelledby="programs-heading">
+  <div class="container">
+    <div class="programs-header">
+      <div class="reveal-left">
+        <span class="section-tag">Programs &amp; Services</span>
+        <h2 id="programs-heading">How We Change<br><em>Lives on the Ground</em></h2>
+      </div>
+      <div class="reveal-right">
+        <p>
+          Four transformative programs designed to meet real human needs — emotional, educational,
+          social, and developmental. We go where the need is greatest.
+        </p>
+      </div>
+    </div>
+
+    <div class="programs-grid">
+
+      <article class="program-card reveal">
+        <div class="program-card-img" role="img" aria-label="Community Mission Interventions — outreach in underserved communities" style="background-image:url('image.jpg')">
+          <div class="program-card-img-overlay" aria-hidden="true"></div>
+        </div>
+        <div class="program-card-body">
+          <p class="program-num">Program 01</p>
+          <h3>Community Mission Interventions</h3>
+          <p>Strategic outreach initiatives designed to meet emotional, educational, and social needs in underserved communities across Africa. Our interventions focus on sustainable impact, not temporary relief.</p>
+        </div>
+        <div class="program-arrow" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </article>
+
+      <article class="program-card reveal">
+        <div class="program-card-img" role="img" aria-label="Mental Health Awareness — workshops, symposiums, faith-based discussions" style="background-image:url('image.jpg')">
+          <div class="program-card-img-overlay" aria-hidden="true"></div>
+        </div>
+        <div class="program-card-body">
+          <p class="program-num">Program 02</p>
+          <h3>Mental Health Awareness Campaigns</h3>
+          <p>School engagements, symposiums, faith-based discussions, and workplace conversations focused on breaking stigma and building emotional resilience in communities that need it most.</p>
+        </div>
+        <div class="program-arrow" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </article>
+
+      <article class="program-card reveal">
+        <div class="program-card-img" role="img" aria-label="Global Pathway Guidance — international education and professional growth" style="background-image:url('image.jpg')">
+          <div class="program-card-img-overlay" aria-hidden="true"></div>
+        </div>
+        <div class="program-card-body">
+          <p class="program-num">Program 03</p>
+          <h3>Global Pathway Guidance</h3>
+          <p>Advisory sessions and structured guidance for individuals seeking international education, professional growth, and ethical global exposure. We believe your background should not limit your future.</p>
+        </div>
+        <div class="program-arrow" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </article>
+
+      <article class="program-card reveal">
+        <div class="program-card-img" role="img" aria-label="Youth Leadership Forums — capacity building for young leaders" style="background-image:url('image.jpg')">
+          <div class="program-card-img-overlay" aria-hidden="true"></div>
+        </div>
+        <div class="program-card-body">
+          <p class="program-num">Program 04</p>
+          <h3>Youth Leadership &amp; Development Forums</h3>
+          <p>Capacity-building programs equipping young leaders with clarity, confidence, and character. Shaping a generation of purpose-driven change-makers across Africa and beyond.</p>
+        </div>
+        <div class="program-arrow" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     GLOBAL FOOTPRINT
+════════════════════════════════════ -->
+<section id="footprint" aria-labelledby="footprint-heading">
+  <div class="container">
+    <div class="footprint-inner">
+
+      <div class="reveal-left">
+        <span class="section-tag">Global Footprint</span>
+        <h2 id="footprint-heading">Our Impact Spans<br><em>Borders &amp; Nations</em></h2>
+        <p>
+          From West Africa to East and Southern Africa, each outreach represents
+          restored hope, strengthened minds, and communities empowered for sustainable growth.
+          Seven countries. Fifteen missions. One unshakeable purpose.
+        </p>
+        <div class="map-visual">
+          <div class="map-placeholder" role="img" aria-label="Map of Africa showing countries where Preshol Global operates">
+            <div style="background-image:url('image.jpg'); width:100%; height:320px; background-size:cover; background-position:center;"></div>
+            <div class="map-placeholder-overlay" aria-hidden="true">
+              <div class="map-globe">🌍</div>
+              <div class="map-label">7 Countries · 5 Continents Touched</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal-right">
+        <nav class="country-list" aria-label="Countries where Preshol Global operates">
+          <div class="country-item">
+            <span class="country-flag" aria-hidden="true">🇳🇬</span>
+            <div class="country-info">
+              <h4>Nigeria</h4>
+              <p>Missions across 5 Geo-political zones in underserved communities</p>
+            </div>
+            <span class="country-trips">Multiple</span>
+          </div>
+          <div class="country-item">
+            <span class="country-flag" aria-hidden="true">🇬🇭</span>
+            <div class="country-info">
+              <h4>Ghana</h4>
+              <p>Dabala Community, Volta Region</p>
+            </div>
+            <span class="country-trips">Mission</span>
+          </div>
+          <div class="country-item">
+            <span class="country-flag" aria-hidden="true">🇨🇮</span>
+            <div class="country-info">
+              <h4>Côte d'Ivoire</h4>
+              <p>Bondoukou Community</p>
+            </div>
+            <span class="country-trips">Mission</span>
+          </div>
+          <div class="country-item">
+            <span class="country-flag" aria-hidden="true">🇳🇪</span>
+            <div class="country-info">
+              <h4>Niger</h4>
+              <p>Niamey Deux Mille Community</p>
+            </div>
+            <span class="country-trips">Mission</span>
+          </div>
+          <div class="country-item">
+            <span class="country-flag" aria-hidden="true">🇺🇬</span>
+            <div class="country-info">
+              <h4>Uganda</h4>
+              <p>Kabale &amp; Rubirizi Districts</p>
+            </div>
+            <span class="country-trips">Mission</span>
+          </div>
+          <div class="country-item">
+            <span class="country-flag" aria-hidden="true">🇧🇯</span>
+            <div class="country-info">
+              <h4>Benin</h4>
+              <p>Community mission interventions</p>
+            </div>
+            <span class="country-trips">Mission</span>
+          </div>
+          <div class="country-item">
+            <span class="country-flag" aria-hidden="true">🇿🇼</span>
+            <div class="country-info">
+              <h4>Zimbabwe</h4>
+              <p>Outreach and advocacy programs</p>
+            </div>
+            <span class="country-trips">Mission</span>
+          </div>
+        </nav>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     GALLERY
+════════════════════════════════════ -->
+<section id="gallery" aria-labelledby="gallery-heading">
+  <div class="container">
+    <div class="gallery-header reveal">
+      <span class="section-tag">Photo Gallery</span>
+      <h2 id="gallery-heading">Faces of <em>Impact</em></h2>
+    </div>
+
+    <div class="gallery-filters reveal" role="tablist" aria-label="Gallery filters">
+      <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button class="filter-btn" data-filter="nigeria" role="tab" aria-selected="false">🇳🇬 Nigeria</button>
+      <button class="filter-btn" data-filter="ghana" role="tab" aria-selected="false">🇬🇭 Ghana</button>
+      <button class="filter-btn" data-filter="ivoire" role="tab" aria-selected="false">🇨🇮 Côte d'Ivoire</button>
+      <button class="filter-btn" data-filter="niger" role="tab" aria-selected="false">🇳🇪 Niger</button>
+      <button class="filter-btn" data-filter="uganda" role="tab" aria-selected="false">🇺🇬 Uganda</button>
+      <button class="filter-btn" data-filter="events" role="tab" aria-selected="false">🎤 Events</button>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Nigeria -->
+      <figure class="gallery-item tall" data-country="nigeria" data-caption="Community Outreach — Meeting families in underserved Northern communities, Nigeria">
+        <img src="image.jpg" alt="Preshol Global community outreach in Northern Nigeria" loading="lazy">
+        <figcaption class="gallery-item-overlay">
+          <p class="gallery-item-tag">🇳🇬 Nigeria</p>
+          <p class="gallery-item-caption">Community Outreach — Northern Zone</p>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item short" data-country="nigeria" data-caption="Mental health talk at a local secondary school, Nigeria">
+        <img src="image.jpg" alt="School engagement session for mental health awareness in Nigeria" loading="lazy">
+        <figcaption class="gallery-item-overlay">
+          <p class="gallery-item-tag">🇳🇬 Nigeria</p>
+          <p class="gallery-item-caption">School Engagement Session</p>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item med" data-country="ghana" data-caption="Arriving in the Volta Region for community mission, Ghana">
+        <img src="image.jpg" alt="Preshol Global team arriving in Dabala, Volta Region Ghana" loading="lazy">
+        <figcaption class="gallery-item-overlay">
+          <p class="gallery-item-tag">🇬🇭 Ghana</p>
+          <p class="gallery-item-caption">Dabala Community Arrival</p>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item tall" data-country="uganda" data-caption="Community mission in the hills of Kabale, Uganda">
+        <img src="image.jpg" alt="Community outreach in Kabale District, Uganda" loading="lazy">
+        <figcaption class="gallery-item-overlay">
+          <p class="gallery-item-tag">🇺🇬 Uganda</p>
+          <p class="gallery-item-caption">Kabale District Outreach</p>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item short" data-country="nigeria" data-caption="Distributing educational and welfare materials, Nigeria">
+        <img src="image.jpg" alt="Resource distribution during Preshol Global Nigeria mission" loading="lazy">
+        <figcaption class="gallery-item-overlay">
+          <p class="gallery-item-tag">🇳🇬 Nigeria</p>
+          <p class="gallery-item-caption">Resource Distribution</p>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item med" data-country="events" data-caption="One of 4 strategic conferences hosted by Preshol Global">
+        <img src="image.jpg" alt="Preshol Global conference main stage" loading="lazy">
+        <figcaption class="gallery-item-overlay">
+          <p class="gallery-item-tag">🎤 Conference</p>
+          <p class="gallery-item-caption">Conference Hall — Main Stage</p>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item short" data-country="ghana" data-caption="Children participating in educational activities, Dabala Ghana">
+        <img src="image.jpg" alt="Children's educational activity during Ghana mission" loading="lazy">
+        <figcaption class="gallery-item-overlay">
+          <p class="gallery-item-tag">🇬🇭 Ghana</p>
+          <p class="gallery-item-caption">Children's Engagement Activity</p>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item tall" data-country="nigeria" data-caption="The Preshol Global team after a successful outreach day, Nigeria">
+        <img src="image.jpg" alt="Preshol Global team group photo after Nigeria outreach" loading="lazy">
+        <figcaption class="gallery-item-overlay">
+          <p class="gallery-item-tag">🇳🇬 Nigeria</p>
+          <p class="gallery-item-caption">Team Group Photo — Nigeria</p>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item med" data-country="ivoire" data-caption="Being received warmly by the Bondoukou community, Côte d'Ivoire">
+        <img src="image.jpg" alt="Warm community welcome in Bondoukou, Côte d'Ivoire" loading="lazy">
+        <figcaption class="gallery-item-overlay">
+          <p class="gallery-item-tag">🇨🇮 Côte d'Ivoire</p>
+          <p class="gallery-item-caption">Bondoukou Community Welcome</p>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item short" data-country="niger" data-caption="Outreach location in Niamey Deux Mille community, Niger">
+        <img src="image.jpg" alt="Mission site in Niamey Deux Mille, Niger" loading="lazy">
+        <figcaption class="gallery-item-overlay">
+          <p class="gallery-item-tag">🇳🇪 Niger</p>
+          <p class="gallery-item-caption">Niamey Mission Site</p>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item med" data-country="events" data-caption="Thought leadership on mental health and global opportunity">
+        <img src="image.jpg" alt="Keynote speaker moment at Preshol Global symposium" loading="lazy">
+        <figcaption class="gallery-item-overlay">
+          <p class="gallery-item-tag">🎤 Conference</p>
+          <p class="gallery-item-caption">Keynote Speaker Moment</p>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item tall" data-country="uganda" data-caption="Empowering the Rubirizi community with holistic support, Uganda">
+        <img src="image.jpg" alt="Community meeting in Rubirizi District, Uganda" loading="lazy">
+        <figcaption class="gallery-item-overlay">
+          <p class="gallery-item-tag">🇺🇬 Uganda</p>
+          <p class="gallery-item-caption">Rubirizi Community Meeting</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close photo viewer">×</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">&#8592;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">&#8594;</button>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════ -->
+<section id="testimonials" aria-labelledby="testi-heading">
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <span class="section-tag">Stories of Change</span>
+      <h2 id="testi-heading">Real Lives,<br><em>Real Transformation</em></h2>
+    </div>
+
+    <div class="testi-carousel reveal">
+      <div class="testi-track" id="testiTrack">
+
+        <blockquote class="testi-slide">
+          <p class="testi-text">
+            Preshol Global came to our community when we had lost hope. The mental health conversations they facilitated changed how we see ourselves and our futures. We learned that our struggles are valid and that healing is possible.
+          </p>
+          <div class="testi-person">
+            <div class="testi-avatar" role="img" aria-label="Portrait of community member"></div>
+            <div>
+              <h4>Community Member</h4>
+              <p class="testi-country">🇳🇬 Nigeria Mission</p>
+            </div>
+          </div>
+        </blockquote>
+
+        <blockquote class="testi-slide">
+          <p class="testi-text">
+            I never thought someone would guide me toward international opportunities from my small town. The Global Pathway program opened doors I did not even know existed. Today I am pursuing my dreams beyond borders.
+          </p>
+          <div class="testi-person">
+            <div class="testi-avatar" role="img" aria-label="Portrait of young beneficiary"></div>
+            <div>
+              <h4>Young Beneficiary</h4>
+              <p class="testi-country">🇬🇭 Ghana Mission</p>
+            </div>
+          </div>
+        </blockquote>
+
+        <blockquote class="testi-slide">
+          <p class="testi-text">
+            The Youth Leadership Forum gave me clarity and confidence I never had. The facilitators treated us like leaders before we even believed we were. That investment in us will ripple through our entire generation.
+          </p>
+          <div class="testi-person">
+            <div class="testi-avatar" role="img" aria-label="Portrait of youth forum participant"></div>
+            <div>
+              <h4>Youth Forum Participant</h4>
+              <p class="testi-country">🇺🇬 Uganda Mission</p>
+            </div>
+          </div>
+        </blockquote>
+
+        <blockquote class="testi-slide">
+          <p class="testi-text">
+            As a faith community leader, witnessing Preshol Global combine faith, mental health, and practical development was extraordinary. They understand that whole-person healing is the foundation of community transformation.
+          </p>
+          <div class="testi-person">
+            <div class="testi-avatar" role="img" aria-label="Portrait of community leader"></div>
+            <div>
+              <h4>Community Leader</h4>
+              <p class="testi-country">🇨🇮 Côte d'Ivoire Mission</p>
+            </div>
+          </div>
+        </blockquote>
+
+      </div>
+
+      <div class="testi-controls">
+        <button class="testi-btn" id="testiPrev" aria-label="Previous testimonial">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <div class="testi-dots" id="testiDots">
+          <button class="testi-dot active" aria-label="Testimonial 1"></button>
+          <button class="testi-dot" aria-label="Testimonial 2"></button>
+          <button class="testi-dot" aria-label="Testimonial 3"></button>
+          <button class="testi-dot" aria-label="Testimonial 4"></button>
+        </div>
+        <button class="testi-btn" id="testiNext" aria-label="Next testimonial">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     WHAT WE DO
+════════════════════════════════════ -->
+<section id="whatwedo" aria-labelledby="whatwedo-heading">
+  <div class="container">
+    <div class="whatwedo-inner">
+
+      <div class="reveal-left">
+        <span class="section-tag">What We Do</span>
+        <h2 id="whatwedo-heading">Transformative Work<br><em>From the Inside Out</em></h2>
+        <p>
+          We design and implement community-based outreach programs that address real human needs —
+          emotional, educational, social, and developmental. Three pillars, one vision.
+        </p>
+        <div class="what-list">
+          <div class="what-item">
+            <div class="what-icon" aria-hidden="true">🤝</div>
+            <div>
+              <h4>Non-Profit Mission Interventions</h4>
+              <p>Community-based outreach with a focus on sustainable impact. Not temporary relief — lasting transformation for individuals and communities.</p>
+            </div>
+          </div>
+          <div class="what-item">
+            <div class="what-icon" aria-hidden="true">🧠</div>
+            <div>
+              <h4>Mental Health Advocacy</h4>
+              <p>Breaking stigma through symposiums, workshops, school engagements, and faith-based conversations. Equipping individuals with tools for mental wellness and self-awareness.</p>
+            </div>
+          </div>
+          <div class="what-item">
+            <div class="what-icon" aria-hidden="true">🌐</div>
+            <div>
+              <h4>Global Opportunity Guidance</h4>
+              <p>Educational pathways, professional development, strategic global positioning, and ethical travel advisory. Your background should not limit your future.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="whatwedo-visual reveal-right">
+        <div class="whatwedo-img" role="img" aria-label="Preshol Global team in the field during a community mission">
+        </div>
+        <div class="whatwedo-badge" aria-label="15 plus mission trips executed">
+          <div class="num">15+</div>
+          <div class="lbl">Mission Trips Executed</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     CONTACT FORM
+════════════════════════════════════ -->
+<section id="contact" aria-labelledby="contact-heading">
+  <div class="contact-wrap">
+
+    <div class="contact-image" role="img" aria-label="Preshol Global team in community outreach">
+      <div class="contact-image-overlay">
+        <blockquote class="contact-quote">
+          "Your partnership<br>changes <span>lives</span><br>beyond borders."
+        </blockquote>
+        <div class="contact-detail">
+          <strong>Email</strong>
+          hello@presholGlobal.org
+          <strong>WhatsApp</strong>
+          Available on request
+          <strong>Partnership</strong>
+          For NGOs, Corporates &amp; Individuals
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-panel">
+      <h2 id="contact-heading">Get In Touch</h2>
+      <p>Whether you want to partner, volunteer, support, or simply connect — we would love to hear from you.</p>
+
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="fname">Full Name *</label>
+            <input type="text" id="fname" name="name" placeholder="Your full name" required aria-required="true">
+          </div>
+          <div class="field">
+            <label for="femail">Email Address *</label>
+            <input type="email" id="femail" name="email" placeholder="your@email.com" required aria-required="true">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="fphone">Phone / WhatsApp</label>
+            <input type="tel" id="fphone" name="phone" placeholder="+234 xxx xxx xxxx">
+          </div>
+          <div class="field">
+            <label for="fcountry">Country / Location</label>
+            <input type="text" id="fcountry" name="country" placeholder="e.g. Nigeria">
+          </div>
+        </div>
+        <div class="field">
+          <label for="fpurpose">Purpose of Contact *</label>
+          <select id="fpurpose" name="purpose" required aria-required="true">
+            <option value="" disabled selected>Select a reason…</option>
+            <option value="enquiry">General Enquiry</option>
+            <option value="partner">Partner With Us</option>
+            <option value="volunteer">Volunteer Interest</option>
+            <option value="media">Media / Press</option>
+            <option value="donate">Support / Donate</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fmessage">Your Message *</label>
+          <textarea id="fmessage" name="message" placeholder="Tell us how you'd like to get involved or how we can help…" required aria-required="true"></textarea>
+        </div>
+
+        <!-- Honeypot anti-spam -->
+        <input type="text" name="_honey" style="display:none" tabindex="-1" aria-hidden="true">
+
+        <button type="submit" class="form-submit">Send Message →</button>
+
+        <div class="form-success" id="formSuccess" role="alert">
+          <p>✅ Thank you! We'll be in touch within 48 hours.</p>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ════════════════════════════════════
+     FOOTER
+════════════════════════════════════ -->
+<footer aria-label="Site footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>Preshol <span>Global</span></h3>
+        <p>
+          Healing hearts, empowering minds, and opening doors beyond borders.
+          A non-profit organisation transforming lives across Africa and beyond.
+        </p>
+        <div class="social-row" aria-label="Social media links">
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="X / Twitter">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#mission">About Us</a></li>
+          <li><a href="#programs">Programs &amp; Events</a></li>
+          <li><a href="#footprint">Global Footprint</a></li>
+          <li><a href="#gallery">Photo Gallery</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Our Programs</h4>
+        <ul>
+          <li><a href="#programs">Community Missions</a></li>
+          <li><a href="#programs">Mental Health Advocacy</a></li>
+          <li><a href="#programs">Global Pathway Guidance</a></li>
+          <li><a href="#programs">Youth Leadership Forums</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@presholGlobal.org">hello@presholGlobal.org</a></li>
+          <li><a href="#contact">WhatsApp (on request)</a></li>
+          <li><a href="#contact">Partnership Enquiries</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Preshol Global. All rights reserved. Healing Hearts · Empowering Minds · Opening Doors.</p>
+      <p>
+        <a href="#">Privacy Policy</a>
+        &nbsp;·&nbsp;
+        <a href="#">Terms of Use</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════ -->
+<script>
+/* ── NAVBAR SCROLL ── */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+/* ── HAMBURGER MENU ── */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  hamburger.classList.toggle('active');
+  hamburger.setAttribute('aria-expanded', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+function closeMobile() {
+  mobileMenu.classList.remove('open');
+  hamburger.classList.remove('active');
+  hamburger.setAttribute('aria-expanded', false);
+  document.body.style.overflow = '';
+}
+
+/* ── HERO SLIDER ── */
+(function() {
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots   = document.querySelectorAll('.hero-dot');
+  let current  = 0;
+  let timer;
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function next() { goTo(current + 1); }
+
+  function startTimer() {
+    clearInterval(timer);
+    timer = setInterval(next, 5500);
+  }
+
+  dots.forEach((d, i) => d.addEventListener('click', () => { goTo(i); startTimer(); }));
+  startTimer();
+
+  // Hide scroll cue after first scroll
+  const scrollCue = document.querySelector('.scroll-cue');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100 && scrollCue) scrollCue.style.opacity = '0';
+  }, { once: true });
+})();
+
+/* ── SCROLL REVEAL ── */
+(function() {
+  const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const io  = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(el => io.observe(el));
+})();
+
+/* ── COUNT-UP STATS ── */
+(function() {
+  const nums = document.querySelectorAll('.stat-num[data-target]');
+  let done   = false;
+
+  function countUp(el) {
+    const target = +el.dataset.target;
+    const suffix = el.dataset.suffix || '';
+    const dur    = 1800;
+    const step   = 16;
+    let   cur    = 0;
+    const inc    = target / (dur / step);
+    const t = setInterval(() => {
+      cur = Math.min(cur + inc, target);
+      el.textContent = (cur >= 1000 ? Math.round(cur).toLocaleString() : Math.round(cur)) + suffix;
+      if (cur >= target) clearInterval(t);
+    }, step);
+  }
+
+  const io = new IntersectionObserver(entries => {
+    if (!done && entries[0].isIntersecting) {
+      done = true;
+      nums.forEach(countUp);
+      io.disconnect();
+    }
+  }, { threshold: 0.4 });
+
+  const statsSection = document.getElementById('impact');
+  if (statsSection) io.observe(statsSection);
+})();
+
+/* ── GALLERY FILTERS ── */
+(function() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const items      = document.querySelectorAll('.gallery-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+      btn.classList.add('active'); btn.setAttribute('aria-selected','true');
+      const f = btn.dataset.filter;
+      items.forEach(item => {
+        const show = f === 'all' || item.dataset.country === f;
+        item.style.transition = 'opacity .35s, transform .35s';
+        item.style.opacity    = show ? '1' : '0.15';
+        item.style.transform  = show ? 'scale(1)' : 'scale(0.97)';
+        item.style.pointerEvents = show ? 'auto' : 'none';
+      });
+    });
+  });
+})();
+
+/* ── LIGHTBOX ── */
+(function() {
+  const lightbox    = document.getElementById('lightbox');
+  const lbImg       = document.getElementById('lightboxImg');
+  const lbCaption   = document.getElementById('lightboxCaption');
+  const lbClose     = document.getElementById('lightboxClose');
+  const lbPrev      = document.getElementById('lightboxPrev');
+  const lbNext      = document.getElementById('lightboxNext');
+  const items       = Array.from(document.querySelectorAll('.gallery-item'));
+  let   currentIdx  = 0;
+
+  function open(idx) {
+    currentIdx = idx;
+    const el  = items[idx];
+    lbImg.src = el.querySelector('img').src;
+    lbImg.alt = el.querySelector('img').alt;
+    lbCaption.textContent = el.dataset.caption || '';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  }
+
+  items.forEach((item, i) => {
+    item.addEventListener('click', () => open(i));
+    item.setAttribute('tabindex', '0');
+    item.addEventListener('keypress', e => { if (e.key === 'Enter') open(i); });
+  });
+
+  lbClose.addEventListener('click', close);
+  lbPrev.addEventListener('click', () => open((currentIdx - 1 + items.length) % items.length));
+  lbNext.addEventListener('click', () => open((currentIdx + 1) % items.length));
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) close(); });
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft')  lbPrev.click();
+    if (e.key === 'ArrowRight') lbNext.click();
+  });
+})();
+
+/* ── TESTIMONIALS CAROUSEL ── */
+(function() {
+  const track    = document.getElementById('testiTrack');
+  const slides   = track.querySelectorAll('.testi-slide');
+  const dots     = document.querySelectorAll('#testiDots .testi-dot');
+  const prevBtn  = document.getElementById('testiPrev');
+  const nextBtn  = document.getElementById('testiNext');
+  let current    = 0;
+  let timer;
+
+  function getVisible() {
+    return window.innerWidth > 768 ? 2 : 1;
+  }
+
+  function update(n) {
+    const vis = getVisible();
+    const max = slides.length - vis;
+    current = Math.max(0, Math.min(n, max));
+    const slideW = slides[0].offsetWidth + 32; // includes margin
+    track.style.transform = `translateX(-${current * slideW}px)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  prevBtn.addEventListener('click', () => { update(current - 1); clearInterval(timer); autoPlay(); });
+  nextBtn.addEventListener('click', () => { update(current + 1); clearInterval(timer); autoPlay(); });
+  dots.forEach((d, i) => d.addEventListener('click', () => { update(i); clearInterval(timer); autoPlay(); }));
+
+  function autoPlay() {
+    timer = setInterval(() => {
+      const vis = getVisible();
+      const max = slides.length - vis;
+      update(current >= max ? 0 : current + 1);
+    }, 5000);
+  }
+
+  autoPlay();
+  window.addEventListener('resize', () => update(current));
+})();
+
+/* ── CONTACT FORM ── */
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  // Basic validation
+  const req = this.querySelectorAll('[required]');
+  let ok = true;
+  req.forEach(f => {
+    f.style.borderColor = '';
+    if (!f.value.trim()) { f.style.borderColor = 'var(--terra)'; ok = false; }
+  });
+  if (!ok) return;
+
+  // Honeypot check
+  if (this._honey && this._honey.value) return;
+
+  // Simulate success (replace with Formspree / EmailJS endpoint)
+  document.getElementById('formSuccess').classList.add('show');
+  this.reset();
+  setTimeout(() => document.getElementById('formSuccess').classList.remove('show'), 6000);
+});
+</script>
+</body>
+</html>
